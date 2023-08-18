@@ -1,12 +1,4 @@
-import {
-  Configuration,
-  OpenAIApi,
-  ChatCompletionRequestMessage,
-  CreateChatCompletionRequest,
-  ConfigurationParameters,
-  ChatCompletionResponseMessageRoleEnum,
-  CreateChatCompletionResponse,
-} from "openai";
+import OpenAI, { ClientOptions } from "openai";
 import { isNode, getEnvironmentVariable } from "../util/env.js";
 import {
   AzureOpenAIInput,
@@ -98,7 +90,7 @@ export class OpenAIChat
 
   modelName = "gpt-3.5-turbo";
 
-  prefixMessages?: ChatCompletionRequestMessage[];
+  prefixMessages?: OpenAI.Chat.CreateChatCompletionRequestMessage[];
 
   modelKwargs?: OpenAIChatInput["modelKwargs"];
 
@@ -122,18 +114,18 @@ export class OpenAIChat
 
   azureOpenAIBasePath?: string;
 
-  private client: OpenAIApi;
+  private client: OpenAI;
 
-  private clientConfig: ConfigurationParameters;
+  private clientConfig: ClientOptions;
 
   constructor(
     fields?: Partial<OpenAIChatInput> &
       Partial<AzureOpenAIInput> &
       BaseLLMParams & {
-        configuration?: ConfigurationParameters;
+        configuration?: ClientOptions;
       },
     /** @deprecated */
-    configuration?: ConfigurationParameters
+    configuration?: ClientOptions
   ) {
     super(fields ?? {});
 
@@ -213,7 +205,7 @@ export class OpenAIChat
    */
   invocationParams(
     options?: this["ParsedCallOptions"]
-  ): Omit<CreateChatCompletionRequest, "messages"> {
+  ): Omit<OpenAI.Chat.CompletionCreateParams, "messages"> {
     return {
       model: this.modelName,
       temperature: this.temperature,
@@ -250,8 +242,8 @@ export class OpenAIChat
     };
   }
 
-  private formatMessages(prompt: string): ChatCompletionRequestMessage[] {
-    const message: ChatCompletionRequestMessage = {
+  private formatMessages(prompt: string): OpenAI.Chat.CreateChatCompletionRequestMessage[] {
+    const message: OpenAI.Chat.CreateChatCompletionRequestMessage = {
       role: "user",
       content: prompt,
     };
@@ -268,7 +260,7 @@ export class OpenAIChat
     const params = {
       ...this.invocationParams(options),
       messages: this.formatMessages(prompt),
-      stream: true,
+      stream: true as const,
     };
     const streamIterable = this.startStream(params, options);
     for await (const streamedResponse of streamIterable) {
@@ -300,7 +292,7 @@ export class OpenAIChat
   }
 
   startStream(
-    request: CreateChatCompletionRequest,
+    request: OpenAI.Chat.CompletionCreateParamsStreaming,
     options?: StreamingAxiosConfiguration
   ) {
     let done = false;
@@ -360,8 +352,8 @@ export class OpenAIChat
     const params = this.invocationParams(options);
 
     const data = params.stream
-      ? await new Promise<CreateChatCompletionResponse>((resolve, reject) => {
-          let response: CreateChatCompletionResponse;
+      ? await new Promise<OpenAI.Chat.Completions.ChatCompletion>((resolve, reject) => {
+          let response: OpenAI.Chat.Completions.ChatCompletion;
           let rejected = false;
           let resolved = false;
           this.completionWithRetry(
@@ -431,10 +423,10 @@ export class OpenAIChat
                         response.choices.push(choice);
                       }
 
-                      if (!choice.message) {
+                      if (!choice?.message) {
                         choice.message = {
                           role: part.delta
-                            ?.role as ChatCompletionResponseMessageRoleEnum,
+                            ?.role as "system" | "assistant" | "user" | "function",
                           content: part.delta?.content ?? "",
                         };
                       }
@@ -486,33 +478,31 @@ export class OpenAIChat
 
   /** @ignore */
   async completionWithRetry(
-    request: CreateChatCompletionRequest,
+    request: OpenAI.Chat.CompletionCreateParams,
     options?: StreamingAxiosConfiguration
-  ) {
+  ): Promise<OpenAI.Chat.Completions.ChatCompletion | OpenAI.Chat.Completions.ChatCompletionChunk> {
     if (!this.client) {
       const openAIEndpointConfig: OpenAIEndpointConfig = {
         azureOpenAIApiDeploymentName: this.azureOpenAIApiDeploymentName,
         azureOpenAIApiInstanceName: this.azureOpenAIApiInstanceName,
         azureOpenAIApiKey: this.azureOpenAIApiKey,
         azureOpenAIBasePath: this.azureOpenAIBasePath,
-        basePath: this.clientConfig.basePath,
+        basePath: this.clientConfig.baseURL,
       };
 
       const endpoint = getEndpoint(openAIEndpointConfig);
 
-      const clientConfig = new Configuration({
+      
+      this.client = new OpenAI({
         ...this.clientConfig,
-        basePath: endpoint,
-        baseOptions: {
-          timeout: this.timeout,
-          ...this.clientConfig.baseOptions,
-        },
+        baseURL: endpoint,
+        timeout: this.timeout,
+        ...this.clientConfig,
       });
-      this.client = new OpenAIApi(clientConfig);
     }
     const axiosOptions = {
       adapter: isNode() ? undefined : fetchAdapter,
-      ...this.clientConfig.baseOptions,
+      ...this.clientConfig,
       ...options,
     } as StreamingAxiosConfiguration;
     if (this.azureOpenAIApiKey) {
@@ -527,11 +517,11 @@ export class OpenAIChat
     }
     return this.caller
       .call(
-        this.client.createChatCompletion.bind(this.client),
+        this.client.chat.completions.create.bind(this.client),
         request,
         axiosOptions
       )
-      .then((res) => res.data);
+      .then((res) => res);
   }
 
   _llmType() {
@@ -578,9 +568,9 @@ export class PromptLayerOpenAIChat extends OpenAIChat {
   }
 
   async completionWithRetry(
-    request: CreateChatCompletionRequest,
+    request: OpenAI.Chat.CompletionCreateParams,
     options?: StreamingAxiosConfiguration
-  ) {
+  ): Promise<OpenAI.Chat.Completions.ChatCompletion | OpenAI.Chat.Completions.ChatCompletionChunk> {
     if (request.stream) {
       return super.completionWithRetry(request, options);
     }

@@ -1,4 +1,4 @@
-import { ChatCompletionFunctions } from "openai";
+import OpenAI from "openai";
 import { JsonSchema7ObjectType } from "zod-to-json-schema/src/parsers/object.js";
 import { JsonSchema7Type } from "zod-to-json-schema/src/parseDef.js";
 import type { OpenAPIV3_1 } from "openapi-types";
@@ -168,7 +168,7 @@ function convertOpenAPISchemaToJSONSchema(
 }
 
 function convertOpenAPISpecToOpenAIFunctions(spec: OpenAPISpec): {
-  openAIFunctions: ChatCompletionFunctions[];
+  openAIFunctions: OpenAI.Chat.CompletionCreateParams.Function[];
   defaultExecutionMethod?: OpenAPIExecutionMethod;
 } {
   if (!spec.document.paths) {
@@ -246,7 +246,7 @@ function convertOpenAPISpecToOpenAIFunctions(spec: OpenAPISpec): {
           };
         }
       }
-      const openAIFunction: ChatCompletionFunctions = {
+      const openAIFunction: OpenAI.Chat.CompletionCreateParams.Function = {
         name: OpenAPISpec.getCleanedOperationId(operation, path, method),
         description: operation.description ?? operation.summary ?? "",
         parameters: {

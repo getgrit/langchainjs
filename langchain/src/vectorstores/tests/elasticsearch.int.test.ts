@@ -28,9 +28,7 @@ test.skip("ElasticVectorSearch integration", async () => {
 
   const indexName = "test_index";
 
-  const embeddings = new OpenAIEmbeddings(undefined, {
-    baseOptions: { temperature: 0 },
-  });
+  const embeddings = new OpenAIEmbeddings(undefined);
   const store = new ElasticVectorSearch(embeddings, { client, indexName });
   await store.deleteIfExists();
 
