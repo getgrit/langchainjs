@@ -1,4 +1,4 @@
-import OpenAI, { ClientOptions } from "openai";
+import { ClientOptions, OpenAI as OpenAIClient } from "openai";
 import { getEnvironmentVariable } from "../util/env.js";
 import {
   AzureOpenAIInput,
@@ -78,7 +78,7 @@ function messageToOpenAIRole(
 }
 
 function openAIResponseToChatMessage(
-  message: OpenAI.Chat.Completions.ChatCompletionMessage
+  message: OpenAIClient.Chat.Completions.ChatCompletionMessage
 ): BaseMessage {
   switch (message.role) {
     case "user":
@@ -127,8 +127,8 @@ function _convertDeltaToMessageChunk(
 }
 
 export interface ChatOpenAICallOptions extends OpenAICallOptions {
-  function_call?: OpenAI.Chat.ChatCompletionMessage.FunctionCall;
-  functions?: OpenAI.Chat.CompletionCreateParams.Function[];
+  function_call?: OpenAIClient.Chat.ChatCompletionMessage.FunctionCall;
+  functions?: OpenAIClient.Chat.CompletionCreateParams.Function[];
   tools?: StructuredTool[];
   promptIndex?: number;
 }
@@ -225,7 +225,7 @@ export class ChatOpenAI
 
   azureOpenAIBasePath?: string;
 
-  private client: OpenAI;
+  private client: OpenAIClient;
 
   private clientConfig: ClientOptions;
 
@@ -307,7 +307,7 @@ export class ChatOpenAI
    */
   invocationParams(
     options?: this["ParsedCallOptions"]
-  ): Omit<OpenAI.Chat.CompletionCreateParams, "messages"> {
+  ): Omit<OpenAIClient.Chat.CompletionCreateParams, "messages"> {
     return {
       model: this.modelName,
       temperature: this.temperature,
@@ -331,7 +331,10 @@ export class ChatOpenAI
   }
 
   /** @ignore */
-  _identifyingParams(): Omit<OpenAI.Chat.CompletionCreateParams, "messages"> & {
+  _identifyingParams(): Omit<
+    OpenAIClient.Chat.CompletionCreateParams,
+    "messages"
+  > & {
     model_name: string;
   } & ClientOptions {
     return {
@@ -348,13 +351,13 @@ export class ChatOpenAI
     options: this["ParsedCallOptions"],
     runManager?: CallbackManagerForLLMRun
   ): AsyncGenerator<ChatGenerationChunk> {
-    const messagesMapped: OpenAI.Chat.CreateChatCompletionRequestMessage[] =
+    const messagesMapped: OpenAIClient.Chat.CreateChatCompletionRequestMessage[] =
       messages.map((message) => ({
         role: messageToOpenAIRole(message),
         content: message.content,
         name: message.name,
         function_call: message.additional_kwargs
-          .function_call as OpenAI.Chat.ChatCompletionMessage.FunctionCall,
+          .function_call as OpenAIClient.Chat.ChatCompletionMessage.FunctionCall,
       }));
     const params = {
       ...this.invocationParams(options),
@@ -400,18 +403,20 @@ export class ChatOpenAI
   ): Promise<ChatResult> {
     const tokenUsage: TokenUsage = {};
     const params = this.invocationParams(options);
-    const messagesMapped: OpenAI.Chat.CreateChatCompletionRequestMessage[] =
+    const messagesMapped: OpenAIClient.Chat.CreateChatCompletionRequestMessage[] =
       messages.map((message) => ({
         role: messageToOpenAIRole(message),
         content: message.content,
         name: message.name,
         function_call: message.additional_kwargs
-          .function_call as OpenAI.Chat.ChatCompletionMessage.FunctionCall,
+          .function_call as OpenAIClient.Chat.ChatCompletionMessage.FunctionCall,
       }));
 
     const data = params.stream
       ? await (async () => {
-          let response: OpenAI.Chat.Completions.ChatCompletion | undefined;
+          let response:
+            | OpenAIClient.Chat.Completions.ChatCompletion
+            | undefined;
           const stream = await this.streamingCompletionWithRetry(
             {
               ...params,
@@ -561,28 +566,29 @@ export class ChatOpenAI
 
   /** @ignore */
   async streamingCompletionWithRetry(
-    request: OpenAI.Chat.CompletionCreateParamsStreaming,
+    request: OpenAIClient.Chat.CompletionCreateParamsStreaming,
     options?: OpenAICoreRequestOptions
-  ): Promise<AsyncIterable<OpenAI.Chat.Completions.ChatCompletionChunk>> {
+  ): Promise<AsyncIterable<OpenAIClient.Chat.Completions.ChatCompletionChunk>> {
     const requestOptions = this._getClientOptions(options);
     const fn: (
-      body: OpenAI.Chat.CompletionCreateParamsStreaming,
+      body: OpenAIClient.Chat.CompletionCreateParamsStreaming,
       options?: OpenAICoreRequestOptions
-    ) => Promise<AsyncIterable<OpenAI.Chat.Completions.ChatCompletionChunk>> =
-      this.client.chat.completions.create.bind(this.client);
+    ) => Promise<
+      AsyncIterable<OpenAIClient.Chat.Completions.ChatCompletionChunk>
+    > = this.client.chat.completions.create.bind(this.client);
     return this.caller.call(fn, request, requestOptions).then((res) => res);
   }
 
   /** @ignore */
   async completionWithRetry(
-    request: OpenAI.Chat.CompletionCreateParamsNonStreaming,
+    request: OpenAIClient.Chat.CompletionCreateParamsNonStreaming,
     options?: OpenAICoreRequestOptions
-  ): Promise<OpenAI.Chat.Completions.ChatCompletion> {
+  ): Promise<OpenAIClient.Chat.Completions.ChatCompletion> {
     const requestOptions = this._getClientOptions(options);
     const fn: (
-      body: OpenAI.Chat.CompletionCreateParamsNonStreaming,
+      body: OpenAIClient.Chat.CompletionCreateParamsNonStreaming,
       options?: OpenAICoreRequestOptions
-    ) => Promise<OpenAI.Chat.Completions.ChatCompletion> =
+    ) => Promise<OpenAIClient.Chat.Completions.ChatCompletion> =
       this.client.chat.completions.create.bind(this.client);
     return this.caller.call(fn, request, requestOptions).then((res) => res);
   }
@@ -600,7 +606,7 @@ export class ChatOpenAI
 
       const endpoint = getEndpoint(openAIEndpointConfig);
 
-      this.client = new OpenAI({
+      this.client = new OpenAIClient({
         ...this.clientConfig,
         baseURL: endpoint,
         timeout: this.timeout,
@@ -707,7 +713,7 @@ export class PromptLayerChatOpenAI extends ChatOpenAI {
 
     const _convertMessageToDict = (message: BaseMessage) => {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      let messageDict: OpenAI.Chat.CreateChatCompletionRequestMessage;
+      let messageDict: OpenAIClient.Chat.CreateChatCompletionRequestMessage;
 
       if (message._getType() === "human") {
         messageDict = { role: "user", content: message.content };
