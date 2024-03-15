@@ -11,9 +11,9 @@ import { AsyncCallerCallOptions } from "../../util/async_caller.js";
  * Parameters for the GoogleVertexAIMultimodalEmbeddings class, extending
  * both EmbeddingsParams and GoogleVertexAIConnectionParams.
  */
-export interface GoogleVertexAIMultimodalEmbeddingsParams
+export const googlevertexai = interface GoogleVertexAIMultimodalEmbeddingsParams
   extends EmbeddingsParams,
-    GoogleVertexAIBaseLLMInput {}
+    GoogleVertexAIBaseLLMInput {};
 
 /**
  * Options for the GoogleVertexAIMultimodalEmbeddings class, extending
@@ -46,7 +46,7 @@ interface GoogleVertexAIMultimodalEmbeddingsResults
 /**
  * The media should have a text property, an image property, or both.
  */
-export type GoogleVertexAIMedia =
+export const googlevertexai = type GoogleVertexAIMedia =
   | {
       text: string;
       image?: Buffer;
@@ -54,9 +54,9 @@ export type GoogleVertexAIMedia =
   | {
       text?: string;
       image: Buffer;
-    };
+    }
 
-export type MediaEmbeddings = {
+export const googlevertexai = type MediaEmbeddings = {
   text?: number[];
   image?: number[];
 };

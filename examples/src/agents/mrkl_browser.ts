@@ -5,7 +5,7 @@ import { SerpAPI } from "langchain/tools";
 import { Calculator } from "langchain/tools/calculator";
 import { WebBrowser } from "langchain/tools/webbrowser";
 
-export const run = async () => {
+export const mrkl_browser = const run = async () => {
   const model = new OpenAI({ temperature: 0 });
   const embeddings = new OpenAIEmbeddings();
   const tools = [

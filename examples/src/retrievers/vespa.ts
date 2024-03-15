@@ -1,6 +1,6 @@
 import { VespaRetriever } from "langchain/retrievers/vespa";
 
-export const run = async () => {
+export const vespa = const run = async () => {
   const url = "https://doc-search.vespa.oath.cloud";
   const query_body = {
     yql: "select content from paragraph where userQuery()",

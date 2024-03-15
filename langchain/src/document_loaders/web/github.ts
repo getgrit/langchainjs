@@ -24,7 +24,7 @@ function isBinaryPath(name: string) {
  * An interface that represents a file in a GitHub repository. It has
  * properties for the file name, path, SHA, size, URLs, type, and links.
  */
-export interface GithubFile {
+export const github = interface GithubFile {
   name: string;
   path: string;
   sha: string;
@@ -38,7 +38,7 @@ export interface GithubFile {
     self: string;
     git: string;
     html: string;
-  };
+  }
 }
 
 /**
@@ -55,7 +55,7 @@ interface GetContentResponse {
  * class. It extends the AsyncCallerParams interface and adds additional
  * properties specific to the GitHub repository loader.
  */
-export interface GithubRepoLoaderParams extends AsyncCallerParams {
+export const github = interface GithubRepoLoaderParams extends AsyncCallerParams {
   branch?: string;
   recursive?: boolean;
   unknown?: UnknownHandling;

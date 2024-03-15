@@ -35,7 +35,7 @@ interface BaseParameters {
   timeout?: number;
 }
 
-export interface SerpAPIParameters extends BaseParameters {
+export const serpapi = interface SerpAPIParameters extends BaseParameters {
   /**
    * Search Query
    * Parameter defines the query you want to search. You can use anything that you

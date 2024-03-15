@@ -1,6 +1,6 @@
 import { OpenAI } from "langchain/llms/openai";
 
-export const run = async () => {
+export const openai = const run = async () => {
   const model = new OpenAI({
     modelName: "gpt-4",
     temperature: 0.7,

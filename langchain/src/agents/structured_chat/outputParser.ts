@@ -73,7 +73,7 @@ export class StructuredChatOutputParser extends AgentActionOutputParser {
  * An interface for the arguments used to construct a
  * `StructuredChatOutputParserWithRetries` instance.
  */
-export interface StructuredChatOutputParserArgs {
+export const outputParser = interface StructuredChatOutputParserArgs {
   baseParser?: StructuredChatOutputParser;
   outputFixingParser?: OutputFixingParser<AgentAction | AgentFinish>;
   toolNames?: string[];

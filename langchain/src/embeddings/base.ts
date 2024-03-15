@@ -4,13 +4,13 @@ import { AsyncCaller, AsyncCallerParams } from "../util/async_caller.js";
  * The parameters required to initialize an instance of the Embeddings
  * class.
  */
-export type EmbeddingsParams = AsyncCallerParams;
+export const base = type EmbeddingsParams = AsyncCallerParams;
 
 /**
  * An abstract class that provides methods for embedding documents and
  * queries using LangChain.
  */
-export abstract class Embeddings {
+export const base = abstract class Embeddings {
   /**
    * The async caller should be used by subclasses to make any async calls,
    * which will thus benefit from the concurrency and retry logic.
@@ -37,4 +37,4 @@ export abstract class Embeddings {
    * @returns A promise that resolves to a vector for the query document.
    */
   abstract embedQuery(document: string): Promise<number[]>;
-}
+};

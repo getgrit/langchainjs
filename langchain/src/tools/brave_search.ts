@@ -5,9 +5,9 @@ import { Tool } from "./base.js";
  * Interface for the parameters required to instantiate a BraveSearch
  * instance.
  */
-export interface BraveSearchParams {
+export const brave_search = interface BraveSearchParams {
   apiKey?: string;
-}
+};
 
 /**
  * Class for interacting with the Brave Search engine. It extends the Tool

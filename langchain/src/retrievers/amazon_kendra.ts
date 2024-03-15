@@ -19,7 +19,7 @@ import { Document } from "../document.js";
  * Interface for the arguments required to initialize an
  * AmazonKendraRetriever instance.
  */
-export interface AmazonKendraRetrieverArgs {
+export const amazon_kendra = interface AmazonKendraRetrieverArgs {
   indexId: string;
   topK: number;
   region: string;

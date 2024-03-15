@@ -27,7 +27,7 @@ interface SearchResponseRow {
 
 type SearchResult = [Document, number, number];
 
-export interface SupabaseLibArgs extends BaseRetrieverInput {
+export const supabase = interface SupabaseLibArgs extends BaseRetrieverInput {
   client: SupabaseClient;
   /**
    * The table name on Supabase. Defaults to "documents".
@@ -51,7 +51,7 @@ export interface SupabaseLibArgs extends BaseRetrieverInput {
   keywordK?: number;
 }
 
-export interface SupabaseHybridSearchParams {
+export const supabase = interface SupabaseHybridSearchParams {
   query: string;
   similarityK: number;
   keywordK: number;

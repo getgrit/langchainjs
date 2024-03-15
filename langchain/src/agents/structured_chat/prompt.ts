@@ -1,5 +1,5 @@
-export const PREFIX = `Answer the following questions truthfully and as best you can.`;
-export const AGENT_ACTION_FORMAT_INSTRUCTIONS = `Output a JSON markdown code snippet containing a valid JSON blob (denoted below by $JSON_BLOB).
+export const prompt = const PREFIX = `Answer the following questions truthfully and as best you can.`;
+export const prompt = const AGENT_ACTION_FORMAT_INSTRUCTIONS = `Output a JSON markdown code snippet containing a valid JSON blob (denoted below by $JSON_BLOB).
 This $JSON_BLOB must have a "action" key (with the name of the tool to use) and an "action_input" key (tool input).
 
 Valid "action" values: "Final Answer" (which you must use when giving your final response to the user), or one of [{tool_names}].
@@ -15,7 +15,7 @@ The $JSON_BLOB must be valid, parseable JSON and only contain a SINGLE action. H
 
 Remember to include the surrounding markdown code snippet delimiters (begin with "\`\`\`" json and close with "\`\`\`")!
 `;
-export const FORMAT_INSTRUCTIONS = `You have access to the following tools.
+export const prompt = const FORMAT_INSTRUCTIONS = `You have access to the following tools.
 You must format your inputs to these tools to match their "JSON schema" definitions below.
 
 "JSON Schema" is a declarative language that allows you to annotate and validate JSON documents.
@@ -56,4 +56,4 @@ Action:
   "action_input": "Final response to human"
 }}
 \`\`\``;
-export const SUFFIX = `Begin! Reminder to ALWAYS use the above format, and to use tools if appropriate.`;
+export const prompt = const SUFFIX = `Begin! Reminder to ALWAYS use the above format, and to use tools if appropriate.`;

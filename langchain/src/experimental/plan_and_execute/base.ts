@@ -7,29 +7,29 @@ import { CallbackManager } from "../../callbacks/manager.js";
 /**
  * Represents an action to be performed in a step.
  */
-export type StepAction = {
+export const base = type StepAction = {
   text: string;
 };
 
 /**
  * Represents the result of a step.
  */
-export type StepResult = {
+export const base = type StepResult = {
   response: string;
 };
 
 /**
  * Represents a step, which includes an action and its result.
  */
-export type Step = {
+export const base = type Step = {
   action: StepAction;
   result: StepResult;
-};
+}
 
 /**
  * Represents a plan, which is a sequence of step actions.
  */
-export type Plan = {
+export const base = type Plan = {
   steps: StepAction[];
 };
 
@@ -37,35 +37,35 @@ export type Plan = {
  * Abstract class that defines the structure for a planner. Planners are
  * responsible for generating a plan based on inputs.
  */
-export abstract class BasePlanner {
+export const base = abstract class BasePlanner {
   abstract plan(
     inputs: ChainValues,
     runManager?: CallbackManager
   ): Promise<Plan>;
-}
+};
 
 /**
  * Abstract class that defines the structure for a step executor. Step
  * executors are responsible for executing a step based on inputs.
  */
-export abstract class BaseStepExecutor {
+export const base = abstract class BaseStepExecutor {
   abstract step(
     inputs: ChainValues,
     runManager?: CallbackManager
   ): Promise<StepResult>;
-}
+};
 
 /**
  * Abstract class that defines the structure for a step container. Step
  * containers are responsible for managing steps.
  */
-export abstract class BaseStepContainer {
+export const base = abstract class BaseStepContainer {
   abstract addStep(action: StepAction, result: StepResult): void;
 
   abstract getSteps(): Step[];
 
   abstract getFinalResponse(): string;
-}
+};
 
 /**
  * Class that extends BaseStepContainer and provides an implementation for

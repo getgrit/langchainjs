@@ -3,7 +3,7 @@ import { initializeAgentExecutorWithOptions } from "langchain/agents";
 import { SerpAPI } from "langchain/tools";
 import { Calculator } from "langchain/tools/calculator";
 
-export const run = async () => {
+export const chat_convo_with_tracing = const run = async () => {
   process.env.LANGCHAIN_HANDLER = "langchain";
   const model = new ChatOpenAI({ temperature: 0 });
   const tools = [

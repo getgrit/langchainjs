@@ -6,7 +6,7 @@ import { BaseDocumentLoader } from "../base.js";
 
 // TypeScript enums are not tree-shakeable, so doing this instead
 // See https://bargsten.org/jsts/enums/
-export const UnknownHandling = {
+export const directory = const UnknownHandling = {
   Ignore: "ignore",
   Warn: "warn",
   Error: "error",
@@ -15,7 +15,7 @@ export const UnknownHandling = {
 /**
  * An enumeration of possible handling strategies for unknown file types.
  */
-export type UnknownHandling =
+export const directory = type UnknownHandling =
   (typeof UnknownHandling)[keyof typeof UnknownHandling];
 
 /**
@@ -23,7 +23,7 @@ export type UnknownHandling =
  * takes a file path as a parameter and returns a `BaseDocumentLoader`
  * instance.
  */
-export interface LoadersMapping {
+export const directory = interface LoadersMapping {
   [extension: string]: (filePath: string) => BaseDocumentLoader;
 }
 

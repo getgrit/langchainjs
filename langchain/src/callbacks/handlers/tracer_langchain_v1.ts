@@ -4,7 +4,7 @@ import { getEnvironmentVariable } from "../../util/env.js";
 
 import { BaseTracer, RunType, Run } from "./tracer.js";
 
-export interface BaseRunV1 {
+export const tracer_langchain_v1 = interface BaseRunV1 {
   uuid: string;
   parent_uuid?: string;
   start_time: number;
@@ -17,38 +17,38 @@ export interface BaseRunV1 {
   type: RunType;
 }
 
-export interface LLMRun extends BaseRunV1 {
+export const tracer_langchain_v1 = interface LLMRun extends BaseRunV1 {
   prompts: string[];
   response?: LLMResult;
-}
+};
 
-export interface ChainRun extends BaseRunV1 {
+export const tracer_langchain_v1 = interface ChainRun extends BaseRunV1 {
   inputs: ChainValues;
   outputs?: ChainValues;
   child_llm_runs: LLMRun[];
   child_chain_runs: ChainRun[];
   child_tool_runs: ToolRun[];
-}
+};
 
-export interface ToolRun extends BaseRunV1 {
+export const tracer_langchain_v1 = interface ToolRun extends BaseRunV1 {
   tool_input: string;
   output?: string;
   action: string;
   child_llm_runs: LLMRun[];
   child_chain_runs: ChainRun[];
   child_tool_runs: ToolRun[];
-}
+};
 
-export interface BaseTracerSession {
+export const tracer_langchain_v1 = interface BaseTracerSession {
   start_time: number;
   name?: string;
-}
+};
 
-export type TracerSessionCreate = BaseTracerSession;
+export const tracer_langchain_v1 = type TracerSessionCreate = BaseTracerSession;;
 
-export interface TracerSessionV1 extends BaseTracerSession {
+export const tracer_langchain_v1 = interface TracerSessionV1 extends BaseTracerSession {
   id: number;
-}
+};
 
 export class LangChainTracerV1 extends BaseTracer {
   name = "langchain_tracer";

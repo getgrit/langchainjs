@@ -8,17 +8,17 @@ import { Embeddings } from "../embeddings/base.js";
 import { Document } from "../document.js";
 
 /** @deprecated use `MongoDBAtlasVectorSearch` instead. */
-export type MongoLibArgs = {
+export const mongo = type MongoLibArgs = {
   client: MongoClient;
   collection: Collection<MongoDocument>;
   indexName?: string;
-};
+}
 
 /**
  * Type that defines an extension for MongoDB queries. It includes an
  * optional array of post-query pipeline steps.
  */
-export type MongoVectorStoreQueryExtension = {
+export const mongo = type MongoVectorStoreQueryExtension = {
   postQueryPipelineSteps?: MongoDocument[];
 };
 

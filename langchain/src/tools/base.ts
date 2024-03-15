@@ -11,7 +11,7 @@ import { RunnableConfig } from "../schema/runnable.js";
 /**
  * Parameters for the Tool classes.
  */
-export interface ToolParams extends BaseLangChainParams {}
+export const base = interface ToolParams extends BaseLangChainParams {};
 
 /**
  * Custom error class used to handle exceptions related to tool input parsing.
@@ -30,7 +30,7 @@ export class ToolInputParsingException extends Error {
 /**
  * Base class for Tools that accept input of any shape defined by a Zod schema.
  */
-export abstract class StructuredTool<
+export const base = abstract class StructuredTool<
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   T extends z.ZodObject<any, any, any, any> = z.ZodObject<any, any, any, any>
 > extends BaseLangChain<
@@ -119,12 +119,12 @@ export abstract class StructuredTool<
   abstract description: string;
 
   returnDirect = false;
-}
+};
 
 /**
  * Base class for Tools that accept input as a string.
  */
-export abstract class Tool extends StructuredTool {
+export const base = abstract class Tool extends StructuredTool {
   schema = z
     .object({ input: z.string().optional() })
     .transform((obj) => obj.input);
@@ -149,4 +149,4 @@ export abstract class Tool extends StructuredTool {
       callbacks
     );
   }
-}
+};

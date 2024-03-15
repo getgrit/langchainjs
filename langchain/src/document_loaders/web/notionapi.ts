@@ -63,22 +63,22 @@ const getTitle = (obj: GetResponse) => {
  * are "database" or "page".
  */
 // @deprecated `type` property is now automatically determined.
-export type NotionAPIType = "database" | "page";
+export const notionapi = type NotionAPIType = "database" | "page";
 
-export type OnDocumentLoadedCallback = (
+export const notionapi = type OnDocumentLoadedCallback = (
   current: number,
   total: number,
   currentTitle?: string,
   rootTitle?: string
 ) => void;
 
-export type NotionAPILoaderOptions = {
+export const notionapi = type NotionAPILoaderOptions = {
   clientOptions: ConstructorParameters<typeof Client>[0];
   id: string;
   type?: NotionAPIType; // @deprecated `type` property is now automatically determined.
   callerOptions?: ConstructorParameters<typeof AsyncCaller>[0];
   onDocumentLoaded?: OnDocumentLoadedCallback;
-};
+}
 
 /**
  * A class that extends the BaseDocumentLoader class. It represents a

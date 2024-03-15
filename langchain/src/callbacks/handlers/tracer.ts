@@ -15,9 +15,9 @@ import {
 } from "../base.js";
 import { Document } from "../../document.js";
 
-export type RunType = string;
+export const tracer = type RunType = string;
 
-export interface Run extends BaseRun {
+export const tracer = interface Run extends BaseRun {
   // some optional fields are always present here
   id: string;
   start_time: number;
@@ -30,13 +30,13 @@ export interface Run extends BaseRun {
     time: number;
     kwargs?: Record<string, unknown>;
   }>;
-}
+};
 
-export interface AgentRun extends Run {
+export const tracer = interface AgentRun extends Run {
   actions: AgentAction[];
-}
+};
 
-export abstract class BaseTracer extends BaseCallbackHandler {
+export const tracer = abstract class BaseTracer extends BaseCallbackHandler {
   protected runMap: Map<string, Run> = new Map();
 
   constructor(_fields?: BaseCallbackHandlerInput) {
@@ -486,4 +486,4 @@ export abstract class BaseTracer extends BaseCallbackHandler {
   onText?(run: Run): void | Promise<void>;
 
   onLLMNewToken?(run: Run): void | Promise<void>;
-}
+};

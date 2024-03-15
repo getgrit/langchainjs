@@ -3,7 +3,7 @@ import { Document } from "../../document.js";
 /**
  * Base Document Compression class. All compressors should extend this class.
  */
-export abstract class BaseDocumentCompressor {
+export const index = abstract class BaseDocumentCompressor {
   /**
    * Abstract method that must be implemented by any class that extends
    * `BaseDocumentCompressor`. This method takes an array of `Document`
@@ -17,4 +17,4 @@ export abstract class BaseDocumentCompressor {
     documents: Document[],
     query: string
   ): Promise<Document[]>;
-}
+};

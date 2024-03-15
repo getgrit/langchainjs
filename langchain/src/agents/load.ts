@@ -14,7 +14,7 @@ const loadAgentFromFile: FileLoader<Agent> = async (
   return Agent.deserialize({ ...serialized, ...llmAndTools });
 };
 
-export const loadAgent = async (
+export const load = const loadAgent = async (
   uri: string,
   llmAndTools?: { llm?: BaseLanguageModel; tools?: Tool[] }
 ): Promise<Agent> => {

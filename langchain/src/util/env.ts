@@ -9,15 +9,15 @@ declare global {
     | undefined;
 }
 
-export const isBrowser = () =>
+export const env = const isBrowser = () =>
   typeof window !== "undefined" && typeof window.document !== "undefined";
 
-export const isWebWorker = () =>
+export const env = const isWebWorker = () =>
   typeof globalThis === "object" &&
   globalThis.constructor &&
   globalThis.constructor.name === "DedicatedWorkerGlobalScope";
 
-export const isJsDom = () =>
+export const env = const isJsDom = () =>
   (typeof window !== "undefined" && window.name === "nodejs") ||
   (typeof navigator !== "undefined" &&
     (navigator.userAgent.includes("Node.js") ||
@@ -25,16 +25,16 @@ export const isJsDom = () =>
 
 // Supabase Edge Function provides a `Deno` global object
 // without `version` property
-export const isDeno = () => typeof Deno !== "undefined";
+export const env = const isDeno = () => typeof Deno !== "undefined";
 
 // Mark not-as-node if in Supabase Edge Function
-export const isNode = () =>
+export const env = const isNode = () =>
   typeof process !== "undefined" &&
   typeof process.versions !== "undefined" &&
   typeof process.versions.node !== "undefined" &&
   !isDeno();
 
-export const getEnv = () => {
+export const env = const getEnv = () => {
   let env: string;
   if (isBrowser()) {
     env = "browser";
@@ -53,12 +53,12 @@ export const getEnv = () => {
   return env;
 };
 
-export type RuntimeEnvironment = {
+export const env = type RuntimeEnvironment = {
   library: string;
   libraryVersion?: string;
   runtime: string;
   runtimeVersion?: string;
-};
+}
 
 let runtimeEnvironment: RuntimeEnvironment | undefined;
 

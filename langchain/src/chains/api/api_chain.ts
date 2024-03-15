@@ -14,7 +14,7 @@ import { BasePromptTemplate } from "../../index.js";
  * Interface that extends ChainInputs and defines additional input
  * parameters specific to an APIChain.
  */
-export interface APIChainInput extends Omit<ChainInputs, "memory"> {
+export const api_chain = interface APIChainInput extends Omit<ChainInputs, "memory"> {
   apiAnswerChain: LLMChain;
   apiRequestChain: LLMChain;
   apiDocs: string;
@@ -27,11 +27,11 @@ export interface APIChainInput extends Omit<ChainInputs, "memory"> {
 /**
  * Type that defines optional configuration options for an APIChain.
  */
-export type APIChainOptions = {
+export const api_chain = type APIChainOptions = {
   headers?: Record<string, string>;
   apiUrlPrompt?: BasePromptTemplate;
   apiResponsePrompt?: BasePromptTemplate;
-};
+}
 
 /**
  * Class that extends BaseChain and represents a chain specifically

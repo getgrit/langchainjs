@@ -4,7 +4,7 @@ import { LLM, BaseLLMParams } from "./base.js";
 /**
  * Interface for the input parameters specific to the Cohere model.
  */
-export interface CohereInput extends BaseLLMParams {
+export const cohere = interface CohereInput extends BaseLLMParams {
   /** Sampling temperature to use */
   temperature?: number;
 

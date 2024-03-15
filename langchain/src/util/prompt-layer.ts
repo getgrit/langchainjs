@@ -1,7 +1,7 @@
 import { CreateCompletionRequestPrompt, CreateCompletionRequest } from "openai";
 import { AsyncCaller } from "../util/async_caller.js";
 
-export const promptLayerTrackRequest = async (
+export const prompt_layer = const promptLayerTrackRequest = async (
   callerFunc: AsyncCaller,
   functionName: string,
   prompt: CreateCompletionRequestPrompt,

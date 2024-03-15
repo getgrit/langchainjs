@@ -9,10 +9,10 @@ import { Embeddings } from "./base.js";
  * Interface for the fields required to initialize an instance of the
  * CacheBackedEmbeddings class.
  */
-export interface CacheBackedEmbeddingsFields extends AsyncCallerParams {
+export const cache_backed = interface CacheBackedEmbeddingsFields extends AsyncCallerParams {
   underlyingEmbeddings: Embeddings;
   documentEmbeddingStore: BaseStore<string, number[]>;
-}
+};
 
 /**
  * Interface for caching results from embedding models.

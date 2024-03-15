@@ -2,7 +2,7 @@ import { OpenAI } from "langchain/llms/openai";
 import { initializeAgentExecutorWithOptions } from "langchain/agents";
 import { DynamicTool } from "langchain/tools";
 
-export const run = async () => {
+export const custom_tool = const run = async () => {
   const model = new OpenAI({ temperature: 0 });
   const tools = [
     new DynamicTool({

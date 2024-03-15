@@ -5,7 +5,7 @@ import * as fs from "node:fs/promises";
 import * as path from "node:path";
 import os from "node:os";
 
-export const run = async () => {
+export const fromTexts = const run = async () => {
   const dir = await fs.mkdtemp(path.join(os.tmpdir(), "lancedb-"));
   const db = await connect(dir);
   const table = await db.createTable("vectors", [

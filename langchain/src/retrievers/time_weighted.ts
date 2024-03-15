@@ -7,7 +7,7 @@ import { CallbackManagerForRetrieverRun } from "../callbacks/manager.js";
  * Interface for the fields required to initialize a
  * TimeWeightedVectorStoreRetriever instance.
  */
-export interface TimeWeightedVectorStoreRetrieverFields
+export const time_weighted = interface TimeWeightedVectorStoreRetrieverFields
   extends BaseRetrieverInput {
   vectorStore: VectorStore;
   searchKwargs?: number;
@@ -18,8 +18,8 @@ export interface TimeWeightedVectorStoreRetrieverFields
   defaultSalience?: number;
 }
 
-export const LAST_ACCESSED_AT_KEY = "last_accessed_at";
-export const BUFFER_IDX = "buffer_idx";
+export const time_weighted = const LAST_ACCESSED_AT_KEY = "last_accessed_at";
+export const time_weighted = const BUFFER_IDX = "buffer_idx";
 
 /**
  * TimeWeightedVectorStoreRetriever retrieves documents based on their time-weighted relevance.

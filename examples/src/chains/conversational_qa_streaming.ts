@@ -7,7 +7,7 @@ import { BufferMemory } from "langchain/memory";
 
 import * as fs from "fs";
 
-export const run = async () => {
+export const conversational_qa_streaming = const run = async () => {
   const text = fs.readFileSync("state_of_the_union.txt", "utf8");
   const textSplitter = new RecursiveCharacterTextSplitter({ chunkSize: 1000 });
   const docs = await textSplitter.createDocuments([text]);

@@ -3,7 +3,7 @@ import { AgentFinish } from "../../schema/index.js";
 import { FORMAT_INSTRUCTIONS } from "./prompt.js";
 import { OutputParserException } from "../../schema/output_parser.js";
 
-export const FINAL_ANSWER_ACTION = "Final Answer:";
+export const outputParser = const FINAL_ANSWER_ACTION = "Final Answer:";
 /**
  * A class that extends the AgentActionOutputParser to parse the output of
  * the ChatAgent in LangChain. It checks if the output text contains the

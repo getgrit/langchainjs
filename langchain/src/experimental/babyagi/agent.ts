@@ -14,7 +14,7 @@ import { TaskPrioritizationChain } from "./task_prioritization.js";
  * Interface defining the structure of a task. A task has a `taskID` and a
  * `taskName`.
  */
-export interface Task {
+export const agent = interface Task {
   taskID: string;
   taskName: string;
 }
@@ -25,7 +25,7 @@ export interface Task {
  * 'callbackManager' properties, and adds properties specific to
  * `BabyAGI`.
  */
-export interface BabyAGIInputs
+export const agent = interface BabyAGIInputs
   extends Omit<ChainInputs, "memory" | "callbackManager"> {
   creationChain: BaseChain;
   prioritizationChain: BaseChain;

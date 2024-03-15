@@ -26,7 +26,7 @@ import {
  * session ID, partition key, sort key, message attribute name, and
  * DynamoDB client configuration.
  */
-export interface DynamoDBChatMessageHistoryFields {
+export const dynamodb = interface DynamoDBChatMessageHistoryFields {
   tableName: string;
   sessionId: string;
   partitionKey?: string;

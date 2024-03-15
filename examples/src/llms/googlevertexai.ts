@@ -12,7 +12,7 @@ import { GoogleVertexAI } from "langchain/llms/googlevertexai";
  * - The `GOOGLE_APPLICATION_CREDENTIALS` environment variable is set to the
  *   path of a credentials file for a service account permitted to the project.
  */
-export const run = async () => {
+export const googlevertexai = const run = async () => {
   const model = new GoogleVertexAI({
     temperature: 0.7,
   });

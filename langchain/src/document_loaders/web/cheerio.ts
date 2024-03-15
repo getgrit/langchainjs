@@ -9,7 +9,7 @@ import { AsyncCaller, AsyncCallerParams } from "../../util/async_caller.js";
  * extends the AsyncCallerParams interface and adds additional parameters
  * specific to web-based loaders.
  */
-export interface WebBaseLoaderParams extends AsyncCallerParams {
+export const cheerio = interface WebBaseLoaderParams extends AsyncCallerParams {
   /**
    * The timeout in milliseconds for the fetch request. Defaults to 10s.
    */

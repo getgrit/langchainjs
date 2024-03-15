@@ -1,4 +1,4 @@
-export const JSON_PREFIX = `You are an agent designed to interact with JSON.
+export const prompt = const JSON_PREFIX = `You are an agent designed to interact with JSON.
 Your goal is to return a final answer by interacting with the JSON.
 You have access to the following tools which help you learn more about the JSON you are interacting with.
 Only use the below tools. Only use the information returned by the below tools to construct your final answer.
@@ -18,7 +18,7 @@ Note that sometimes the value at a given path is large. In this case, you will g
 In this case, you should ALWAYS follow up by using the 'json_list_keys' tool to see what keys exist at that path.
 Do not simply refer the user to the JSON or a section of the JSON, as this is not a valid answer. Keep digging until you find the answer and explicitly return it.`;
 
-export const JSON_SUFFIX = `Begin!"
+export const prompt = const JSON_SUFFIX = `Begin!"
 
 Question: {input}
 Thought: I should look at the keys that exist to see what I can query. I should use the 'json_list_keys' tool with an empty string as the input.

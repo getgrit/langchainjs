@@ -7,14 +7,14 @@ import { ChainInputs, BaseChain } from "./base.js";
  * fields required for a transform chain. It includes the `transform`
  * function, `inputVariables`, and `outputVariables` properties.
  */
-export interface TransformChainFields<
+export const transform = interface TransformChainFields<
   I extends ChainValues,
   O extends ChainValues
 > extends ChainInputs {
   transform: (values: I, callbacks?: Callbacks) => O | Promise<O>;
   inputVariables: (keyof I extends string ? keyof I : never)[];
   outputVariables: (keyof O extends string ? keyof O : never)[];
-}
+};
 
 /**
  * Class that represents a transform chain. It extends the `BaseChain`

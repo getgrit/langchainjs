@@ -1,6 +1,6 @@
 import { Cohere } from "langchain/llms/cohere";
 
-export const run = async () => {
+export const cohere = const run = async () => {
   const model = new Cohere({
     temperature: 0.7,
     maxTokens: 20,

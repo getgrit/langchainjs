@@ -5,7 +5,7 @@ import { LLM, BaseLLMParams } from "./base.js";
  * Interface defining the parameters for configuring the Hugging Face
  * model for text generation.
  */
-export interface HFInput {
+export const hf = interface HFInput {
   /** Model to use */
   model: string;
 

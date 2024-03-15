@@ -8,9 +8,9 @@ import { Document } from "../document.js";
  * `MetalRetriever` instance. It extends the `BaseRetrieverInput`
  * interface and adds a `client` field of type `Metal`.
  */
-export interface MetalRetrieverFields extends BaseRetrieverInput {
+export const metal = interface MetalRetrieverFields extends BaseRetrieverInput {
   client: Metal;
-}
+};
 
 /**
  * Interface to represent a response item from the Metal service. It

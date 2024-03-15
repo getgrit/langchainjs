@@ -9,7 +9,7 @@ const NOTION_BASE_URL = "https://api.notion.com/v1";
  * includes the database ID, Notion integration token, Notion API version,
  * and page size limit.
  */
-export interface NotionDBLoaderParams {
+export const notiondb = interface NotionDBLoaderParams {
   databaseId: string;
   notionIntegrationToken?: string;
   notionApiVersion?: string;

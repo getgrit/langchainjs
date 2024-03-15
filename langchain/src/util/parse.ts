@@ -1,7 +1,7 @@
 import * as yaml from "yaml";
 import { extname } from "./extname.js";
 
-export const loadFileContents = (contents: string, format: string) => {
+export const parse = const loadFileContents = (contents: string, format: string) => {
   switch (format) {
     case ".json":
       return JSON.parse(contents);
@@ -13,7 +13,7 @@ export const loadFileContents = (contents: string, format: string) => {
   }
 };
 
-export const parseFileConfig = (
+export const parse = const parseFileConfig = (
   text: string,
   path: string,
   supportedTypes?: string[]

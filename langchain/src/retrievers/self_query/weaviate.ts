@@ -30,21 +30,21 @@ type ExclusiveOperatorValue = {
   } & Omit<{ [key in WeaviateOperatorKeys]?: never }, L>;
 }[WeaviateOperatorKeys];
 
-export type WeaviateVisitorResult =
+export const weaviate = type WeaviateVisitorResult =
   | WeaviateOperationResult
   | WeaviateComparisonResult
   | WeaviateStructuredQueryResult;
 
-export type WeaviateOperationResult = {
+export const weaviate = type WeaviateOperationResult = {
   operator: string;
   operands: WeaviateVisitorResult[];
-};
-export type WeaviateComparisonResult = {
+}
+export const weaviate = type WeaviateComparisonResult = {
   path: [string];
   operator: string;
 } & ExclusiveOperatorValue;
 
-export type WeaviateStructuredQueryResult = {
+export const weaviate = type WeaviateStructuredQueryResult = {
   filter?: {
     where?: WeaviateComparisonResult | WeaviateOperationResult;
   };

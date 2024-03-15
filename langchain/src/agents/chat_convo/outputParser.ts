@@ -9,11 +9,11 @@ import { AgentAction, AgentFinish } from "../../schema/index.js";
 import { OutputFixingParser } from "../../output_parsers/fix.js";
 import { BaseLanguageModel } from "../../base_language/index.js";
 
-export type ChatConversationalAgentOutputParserFormatInstructionsOptions =
+export const outputParser = type ChatConversationalAgentOutputParserFormatInstructionsOptions =
   FormatInstructionsOptions & {
     toolNames: string[];
     raw?: boolean;
-  };
+  };;
 
 /**
  * Class that represents an output parser for the ChatConversationalAgent
@@ -78,11 +78,11 @@ export class ChatConversationalAgentOutputParser extends AgentActionOutputParser
   }
 }
 
-export type ChatConversationalAgentOutputParserArgs = {
+export const outputParser = type ChatConversationalAgentOutputParserArgs = {
   baseParser?: ChatConversationalAgentOutputParser;
   outputFixingParser?: OutputFixingParser<AgentAction | AgentFinish>;
   toolNames?: string[];
-};
+};;
 
 /**
  * Class that represents an output parser with retries for the

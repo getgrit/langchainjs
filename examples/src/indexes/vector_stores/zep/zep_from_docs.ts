@@ -5,7 +5,7 @@ import { randomUUID } from "crypto";
 
 const loader = new TextLoader("src/document_loaders/example_data/example.txt");
 const docs = await loader.load();
-export const run = async () => {
+export const zep_from_docs = const run = async () => {
   const collectionName = `collection${randomUUID().split("-")[0]}`;
 
   const zepConfig = {

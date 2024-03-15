@@ -6,7 +6,7 @@ import {
   SystemMessagePromptTemplate,
 } from "langchain/prompts";
 
-export const run = async () => {
+export const llm_chain = const run = async () => {
   const chat = new ChatOpenAI({ temperature: 0 });
 
   const chatPrompt = ChatPromptTemplate.fromPromptMessages([

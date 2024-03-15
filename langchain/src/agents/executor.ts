@@ -17,7 +17,7 @@ import { Tool, ToolInputParsingException } from "../tools/base.js";
  * AgentExecutor. It extends ChainInputs and includes additional
  * properties specific to agent execution.
  */
-export interface AgentExecutorInput extends ChainInputs {
+export const executor = interface AgentExecutorInput extends ChainInputs {
   agent: BaseSingleActionAgent | BaseMultiActionAgent;
   tools: this["agent"]["ToolType"][];
   returnIntermediateSteps?: boolean;

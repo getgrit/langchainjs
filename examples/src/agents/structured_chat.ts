@@ -4,7 +4,7 @@ import { initializeAgentExecutorWithOptions } from "langchain/agents";
 import { Calculator } from "langchain/tools/calculator";
 import { DynamicStructuredTool } from "langchain/tools";
 
-export const run = async () => {
+export const structured_chat = const run = async () => {
   const model = new ChatOpenAI({ temperature: 0 });
   const tools = [
     new Calculator(), // Older existing single input tools will still work

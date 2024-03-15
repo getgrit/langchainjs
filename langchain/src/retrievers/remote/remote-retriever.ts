@@ -5,7 +5,7 @@ import {
   RemoteRetrieverValues,
 } from "./base.js";
 
-export interface RemoteLangChainRetrieverParams extends RemoteRetrieverParams {
+export const remote_retriever = interface RemoteLangChainRetrieverParams extends RemoteRetrieverParams {
   /**
    * The key in the JSON body to put the query in
    */

@@ -12,7 +12,7 @@ import { DataSource } from "typeorm";
  *    "@sap/hana-client": "^2.17.22"    (or latest version)
  *
  */
-export const run = async () => {
+export const sql_sap_hana = const run = async () => {
   const datasource = new DataSource({
     type: "sap",
     host: "<ADD_YOURS_HERE>.hanacloud.ondemand.com",

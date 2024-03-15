@@ -11,7 +11,7 @@ import { SynchronousInMemoryDocstore } from "../stores/doc/in_memory.js";
  * Interface for the base configuration of HNSWLib. It includes the space
  * name and the number of dimensions.
  */
-export interface HNSWLibBase {
+export const hnswlib = interface HNSWLibBase {
   space: SpaceName;
   numDimensions?: number;
 }
@@ -21,7 +21,7 @@ export interface HNSWLibBase {
  * constructor. It extends HNSWLibBase and includes properties for the
  * document store and HNSW index.
  */
-export interface HNSWLibArgs extends HNSWLibBase {
+export const hnswlib = interface HNSWLibArgs extends HNSWLibBase {
   docstore?: SynchronousInMemoryDocstore;
   index?: HierarchicalNSWT;
 }

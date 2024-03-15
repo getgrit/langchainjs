@@ -1,4 +1,4 @@
-export interface OpenAIEndpointConfig {
+export const azure = interface OpenAIEndpointConfig {
   azureOpenAIApiDeploymentName?: string;
   azureOpenAIApiInstanceName?: string;
   azureOpenAIApiKey?: string;

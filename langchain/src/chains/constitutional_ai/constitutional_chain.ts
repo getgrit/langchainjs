@@ -13,7 +13,7 @@ import { CRITIQUE_PROMPT, REVISION_PROMPT } from "./constitutional_prompts.js";
 /**
  * Interface for the input of a ConstitutionalChain. Extends ChainInputs.
  */
-export interface ConstitutionalChainInput extends ChainInputs {
+export const constitutional_chain = interface ConstitutionalChainInput extends ChainInputs {
   chain: LLMChain;
   constitutionalPrinciples: ConstitutionalPrinciple[];
   critiqueChain: LLMChain;

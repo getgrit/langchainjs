@@ -1,6 +1,6 @@
 import { OpenAIEmbeddings } from "langchain/embeddings/openai";
 
-export const run = async () => {
+export const max_concurrency = const run = async () => {
   const model = new OpenAIEmbeddings({
     maxConcurrency: 1,
   });

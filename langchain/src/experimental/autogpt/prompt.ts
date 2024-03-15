@@ -13,7 +13,7 @@ import { SerializedBasePromptTemplate } from "../../prompts/serde.js";
 /**
  * Interface for the input parameters of the AutoGPTPrompt class.
  */
-export interface AutoGPTPromptInput {
+export const prompt = interface AutoGPTPromptInput {
   aiName: string;
   aiRole: string;
   tools: ObjectTool[];

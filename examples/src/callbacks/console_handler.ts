@@ -3,7 +3,7 @@ import { LLMChain } from "langchain/chains";
 import { OpenAI } from "langchain/llms/openai";
 import { PromptTemplate } from "langchain/prompts";
 
-export const run = async () => {
+export const console_handler = const run = async () => {
   const handler = new ConsoleCallbackHandler();
   const llm = new OpenAI({ temperature: 0, callbacks: [handler] });
   const prompt = PromptTemplate.fromTemplate("1 + {number} =");

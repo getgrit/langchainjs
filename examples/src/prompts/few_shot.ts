@@ -1,6 +1,6 @@
 import { FewShotPromptTemplate, PromptTemplate } from "langchain/prompts";
 
-export const run = async () => {
+export const few_shot = const run = async () => {
   // First, create a list of few-shot examples.
   const examples = [
     { word: "happy", antonym: "sad" },

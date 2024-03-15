@@ -14,7 +14,7 @@ import { QAChainParams, loadQAChain } from "./question_answering/load.js";
 import { CallbackManagerForChainRun } from "../callbacks/manager.js";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export type LoadValues = Record<string, any>;
+export const conversational_retrieval_chain = type LoadValues = Record<string, any>;
 
 const question_generator_template = `Given the following conversation and a follow up question, rephrase the follow up question to be a standalone question.
 
@@ -27,7 +27,7 @@ Standalone question:`;
  * Interface for the input parameters of the
  * ConversationalRetrievalQAChain class.
  */
-export interface ConversationalRetrievalQAChainInput extends ChainInputs {
+export const conversational_retrieval_chain = interface ConversationalRetrievalQAChainInput extends ChainInputs {
   retriever: BaseRetriever;
   combineDocumentsChain: BaseChain;
   questionGeneratorChain: LLMChain;

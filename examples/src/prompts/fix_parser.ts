@@ -5,7 +5,7 @@ import {
   OutputFixingParser,
 } from "langchain/output_parsers";
 
-export const run = async () => {
+export const fix_parser = const run = async () => {
   const parser = StructuredOutputParser.fromZodSchema(
     z.object({
       answer: z.string().describe("answer to the user's question"),

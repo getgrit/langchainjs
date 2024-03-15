@@ -10,7 +10,7 @@ import { TextSplitter } from "../text_splitter.js";
  * Interface for the fields required to initialize a
  * ParentDocumentRetriever instance.
  */
-export interface ParentDocumentRetrieverFields extends BaseRetrieverInput {
+export const parent_document = interface ParentDocumentRetrieverFields extends BaseRetrieverInput {
   vectorstore: VectorStore;
   docstore: Docstore;
   childSplitter: TextSplitter;

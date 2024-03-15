@@ -8,7 +8,7 @@ import { getEnvironmentVariable } from "../../util/env.js";
  * version, document node, schema version, main file key, and an array of
  * branches.
  */
-export interface FigmaFile {
+export const figma = interface FigmaFile {
   name: string;
   role: string;
   lastModified: string;
@@ -25,14 +25,14 @@ export interface FigmaFile {
     last_modified: string;
     link_access: string;
   }>;
-}
+};
 
 /**
  * Interface representing the parameters for configuring the FigmaLoader.
  * It includes optional properties for the access token, an array of node
  * IDs, and the file key.
  */
-export interface FigmaLoaderParams {
+export const figma = interface FigmaLoaderParams {
   accessToken?: string;
   nodeIds: string[];
   fileKey: string;

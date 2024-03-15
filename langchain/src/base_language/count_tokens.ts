@@ -3,7 +3,7 @@ import { encodingForModel } from "../util/tiktoken.js";
 
 // https://www.npmjs.com/package/js-tiktoken
 
-export const getModelNameForTiktoken = (modelName: string): TiktokenModel => {
+export const count_tokens = const getModelNameForTiktoken = (modelName: string): TiktokenModel => {
   if (modelName.startsWith("gpt-3.5-turbo-16k")) {
     return "gpt-3.5-turbo-16k";
   }
@@ -23,7 +23,7 @@ export const getModelNameForTiktoken = (modelName: string): TiktokenModel => {
   return modelName as TiktokenModel;
 };
 
-export const getEmbeddingContextSize = (modelName?: string): number => {
+export const count_tokens = const getEmbeddingContextSize = (modelName?: string): number => {
   switch (modelName) {
     case "text-embedding-ada-002":
       return 8191;
@@ -32,7 +32,7 @@ export const getEmbeddingContextSize = (modelName?: string): number => {
   }
 };
 
-export const getModelContextSize = (modelName: string): number => {
+export const count_tokens = const getModelContextSize = (modelName: string): number => {
   switch (getModelNameForTiktoken(modelName)) {
     case "gpt-3.5-turbo-16k":
       return 16384;
@@ -64,7 +64,7 @@ interface CalculateMaxTokenProps {
   modelName: TiktokenModel;
 }
 
-export const calculateMaxTokens = async ({
+export const count_tokens = const calculateMaxTokens = async ({
   prompt,
   modelName,
 }: CalculateMaxTokenProps) => {

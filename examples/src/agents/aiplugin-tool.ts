@@ -6,7 +6,7 @@ import {
   AIPluginTool,
 } from "langchain/tools";
 
-export const run = async () => {
+export const aiplugin_tool = const run = async () => {
   const tools = [
     new RequestsGetTool(),
     new RequestsPostTool(),

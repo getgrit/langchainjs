@@ -7,7 +7,7 @@ import { Embeddings, EmbeddingsParams } from "./base.js";
  * Interface that extends EmbeddingsParams and defines additional
  * parameters specific to the TensorFlowEmbeddings class.
  */
-export interface TensorFlowEmbeddingsParams extends EmbeddingsParams {}
+export const tensorflow = interface TensorFlowEmbeddingsParams extends EmbeddingsParams {};
 
 /**
  * Class that extends the Embeddings class and provides methods for

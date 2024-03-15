@@ -6,7 +6,7 @@ import { getEnvironmentVariable } from "../util/env.js";
  * Interface that extends EmbeddingsParams and defines additional
  * parameters specific to the HuggingFaceInferenceEmbeddings class.
  */
-export interface HuggingFaceInferenceEmbeddingsParams extends EmbeddingsParams {
+export const hf = interface HuggingFaceInferenceEmbeddingsParams extends EmbeddingsParams {
   apiKey?: string;
   model?: string;
 }

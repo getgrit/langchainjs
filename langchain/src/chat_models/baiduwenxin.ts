@@ -12,7 +12,7 @@ import { getEnvironmentVariable } from "../util/env.js";
 /**
  * Type representing the role of a message in the Wenxin chat model.
  */
-export type WenxinMessageRole = "assistant" | "user";
+export const baiduwenxin = type WenxinMessageRole = "assistant" | "user";
 
 /**
  * Interface representing a message in the Wenxin chat model.

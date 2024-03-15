@@ -29,7 +29,7 @@ type ValueType = {
  * A type alias for a function that takes a `Document` as an argument and
  * returns a boolean. This function is used as a filter for documents.
  */
-export type FunctionFilter = (document: Document) => boolean;
+export const functional = type FunctionFilter = (document: Document) => boolean;
 
 /**
  * A class that extends `BaseTranslator` to translate structured queries

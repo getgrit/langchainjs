@@ -6,7 +6,7 @@ import { BaseChain } from "../chains/base.js";
  * Extends the DynamicToolInput interface, replacing the 'func' property
  * with a 'chain' property.
  */
-export interface ChainToolInput extends Omit<DynamicToolInput, "func"> {
+export const chain = interface ChainToolInput extends Omit<DynamicToolInput, "func"> {
   chain: BaseChain;
 }
 

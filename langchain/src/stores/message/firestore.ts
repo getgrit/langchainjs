@@ -23,7 +23,7 @@ import {
  * name, session ID, user ID, and optionally, the app index and
  * configuration for the Firebase app.
  */
-export interface FirestoreDBChatMessageHistory {
+export const firestore = interface FirestoreDBChatMessageHistory {
   collectionName: string;
   sessionId: string;
   userId: string;

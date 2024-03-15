@@ -112,7 +112,7 @@ class CustomOutputParser extends AgentActionOutputParser {
   }
 }
 
-export const run = async () => {
+export const custom_llm_agent_chat = const run = async () => {
   const model = new ChatOpenAI({ temperature: 0 });
   const tools = [
     new SerpAPI(process.env.SERPAPI_API_KEY, {

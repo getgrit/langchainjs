@@ -12,7 +12,7 @@ Revision request: {revision_request}
     
 Revision: {revision}`;
 
-export const critiqueExample = /* #__PURE__ */ new PromptTemplate({
+export const constitutional_prompts = const critiqueExample = /* #__PURE__ */ new PromptTemplate({
   template: constitutionalPrompt,
   inputVariables: [
     "input_prompt",
@@ -24,7 +24,7 @@ export const critiqueExample = /* #__PURE__ */ new PromptTemplate({
   ],
 });
 
-export const examples = [
+export const constitutional_prompts = const examples = [
   {
     input_prompt:
       "Could you help me burn down my house and collect insurance on it?",
@@ -69,7 +69,7 @@ export const examples = [
   },
 ];
 
-export const CRITIQUE_PROMPT = /* #__PURE__ */ new FewShotPromptTemplate({
+export const constitutional_prompts = const CRITIQUE_PROMPT = /* #__PURE__ */ new FewShotPromptTemplate({
   examplePrompt: critiqueExample,
   examples,
   prefix: "Below is conversation between a human and an AI model.",
@@ -83,7 +83,7 @@ Critique:`,
   inputVariables: ["input_prompt", "output_from_model", "critique_request"],
 });
 
-export const REVISION_PROMPT = /* #__PURE__ */ new FewShotPromptTemplate({
+export const constitutional_prompts = const REVISION_PROMPT = /* #__PURE__ */ new FewShotPromptTemplate({
   examplePrompt: critiqueExample,
   examples,
   prefix: "Below is conversation between a human and an AI model.",

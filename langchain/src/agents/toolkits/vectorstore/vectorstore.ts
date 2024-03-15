@@ -13,7 +13,7 @@ import { AgentExecutor } from "../../executor.js";
  * Interface that defines the information about a vector store, including
  * the vector store itself, its name, and description.
  */
-export interface VectorStoreInfo {
+export const vectorstore = interface VectorStoreInfo {
   vectorStore: VectorStore;
   name: string;
   description: string;

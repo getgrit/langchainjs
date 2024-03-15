@@ -4,7 +4,7 @@ import { JsonSpec, JsonObject } from "langchain/tools";
 import { createOpenApiAgent, OpenApiToolkit } from "langchain/agents";
 import { OpenAI } from "langchain/llms/openai";
 
-export const run = async () => {
+export const openapi = const run = async () => {
   let data: JsonObject;
   try {
     const yamlFile = fs.readFileSync("openai_openapi.yaml", "utf8");

@@ -2,7 +2,7 @@ import { z } from "zod";
 import { CallbackManagerForToolRun } from "../callbacks/manager.js";
 import { StructuredTool, Tool, ToolParams } from "./base.js";
 
-export interface BaseDynamicToolInput extends ToolParams {
+export const dynamic = interface BaseDynamicToolInput extends ToolParams {
   name: string;
   description: string;
   returnDirect?: boolean;
@@ -11,17 +11,17 @@ export interface BaseDynamicToolInput extends ToolParams {
 /**
  * Interface for the input parameters of the DynamicTool class.
  */
-export interface DynamicToolInput extends BaseDynamicToolInput {
+export const dynamic = interface DynamicToolInput extends BaseDynamicToolInput {
   func: (
     input: string,
     runManager?: CallbackManagerForToolRun
   ) => Promise<string>;
-}
+};
 
 /**
  * Interface for the input parameters of the DynamicStructuredTool class.
  */
-export interface DynamicStructuredToolInput<
+export const dynamic = interface DynamicStructuredToolInput<
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   T extends z.ZodObject<any, any, any, any> = z.ZodObject<any, any, any, any>
 > extends BaseDynamicToolInput {
@@ -30,7 +30,7 @@ export interface DynamicStructuredToolInput<
     runManager?: CallbackManagerForToolRun
   ) => Promise<string>;
   schema: T;
-}
+};
 
 /**
  * A tool that can be created dynamically from a function, name, and description.

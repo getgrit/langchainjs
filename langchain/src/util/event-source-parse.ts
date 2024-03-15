@@ -6,13 +6,13 @@
 // MIT License
 import { type Readable } from "stream";
 
-export const EventStreamContentType = "text/event-stream";
+export const event_source_parse = const EventStreamContentType = "text/event-stream";
 
 /**
  * Represents a message sent in an event stream
  * https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events#Event_stream_format
  */
-export interface EventSourceMessage {
+export const event_source_parse = interface EventSourceMessage {
   /** The event ID to set the EventSource object's last event ID value. */
   id: string;
   /** A string identifying the type of event described. */
@@ -125,7 +125,7 @@ export function getLines(
 
       // start looking forward till the end of line:
       let lineEnd = -1; // index of the \r or \n char
-      for (; position < bufLength && lineEnd === -1; ++position) {
+      for ( position < bufLength && lineEnd === -1; ++position) {
         switch (buffer[position]) {
           case ControlChars.Colon:
             if (fieldLength === -1) {

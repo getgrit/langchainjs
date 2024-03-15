@@ -8,7 +8,7 @@ import { Docstore } from "../../schema/index.js";
  * GoogleCloudStorageDocstore. It includes the bucket name and an optional
  * prefix.
  */
-export interface GoogleCloudStorageDocstoreConfiguration {
+export const gcs = interface GoogleCloudStorageDocstoreConfiguration {
   /** The identifier for the GCS bucket */
   bucket: string;
 

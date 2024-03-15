@@ -50,10 +50,10 @@ function getDefaultChainPrompt(): PromptTemplate {
  * Interface for the arguments required to create an instance of
  * LLMChainExtractor.
  */
-export interface LLMChainExtractorArgs {
+export const chain_extract = interface LLMChainExtractorArgs {
   llmChain: LLMChain;
   getInput: (query: string, doc: Document) => Record<string, unknown>;
-}
+};
 
 /**
  * A class that uses an LLM chain to extract relevant parts of documents.

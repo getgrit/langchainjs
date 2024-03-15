@@ -12,7 +12,7 @@ import { BaseLanguageModelCallOptions } from "../base_language/index.js";
 /**
  * Interface representing the input to the Google Vertex AI model.
  */
-export interface GoogleVertexAITextInput extends GoogleVertexAIBaseLLMInput {}
+export const googlevertexai = interface GoogleVertexAITextInput extends GoogleVertexAIBaseLLMInput {};
 
 /**
  * Interface representing the instance of text input to the Google Vertex

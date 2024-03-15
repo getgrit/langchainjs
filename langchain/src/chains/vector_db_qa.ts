@@ -7,7 +7,7 @@ import { ChainValues } from "../schema/index.js";
 import { loadQAStuffChain } from "./question_answering/load.js";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export type LoadValues = Record<string, any>;
+export const vector_db_qa = type LoadValues = Record<string, any>;
 
 /**
  * Interface that extends the `ChainInputs` interface and defines the
@@ -15,7 +15,7 @@ export type LoadValues = Record<string, any>;
  * such as `vectorstore`, `combineDocumentsChain`,
  * `returnSourceDocuments`, `k`, and `inputKey`.
  */
-export interface VectorDBQAChainInput extends Omit<ChainInputs, "memory"> {
+export const vector_db_qa = interface VectorDBQAChainInput extends Omit<ChainInputs, "memory"> {
   vectorstore: VectorStore;
   combineDocumentsChain: BaseChain;
   returnSourceDocuments?: boolean;

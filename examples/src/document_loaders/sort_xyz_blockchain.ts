@@ -10,7 +10,7 @@ import { OpenAI } from "langchain/llms/openai";
 /**
  * Run the example.
  */
-export const run = async () => {
+export const sort_xyz_blockchain = const run = async () => {
   // Initialize the OpenAI model. Use OPENAI_API_KEY from .env in /examples
   const model = new OpenAI({ temperature: 0.9 });
 

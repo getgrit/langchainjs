@@ -16,36 +16,36 @@ interface RawResultTableAndColumn {
   is_nullable: string;
 }
 
-export interface SqlDatabaseParams {
+export const sql_utils = interface SqlDatabaseParams {
   includesTables?: Array<string>;
   ignoreTables?: Array<string>;
   sampleRowsInTableInfo?: number;
-}
+};
 
-export interface SqlDatabaseOptionsParams extends SqlDatabaseParams {
+export const sql_utils = interface SqlDatabaseOptionsParams extends SqlDatabaseParams {
   appDataSourceOptions: DataSourceOptions;
-}
+};
 
-export interface SqlDatabaseDataSourceParams extends SqlDatabaseParams {
+export const sql_utils = interface SqlDatabaseDataSourceParams extends SqlDatabaseParams {
   appDataSource: DataSource;
-}
+};
 
-export type SerializedSqlDatabase = SqlDatabaseOptionsParams & {
+export const sql_utils = type SerializedSqlDatabase = SqlDatabaseOptionsParams & {
   _type: string;
 };
 
-export interface SqlTable {
+export const sql_utils = interface SqlTable {
   tableName: string;
   columns: SqlColumn[];
 }
 
-export interface SqlColumn {
+export const sql_utils = interface SqlColumn {
   columnName: string;
   dataType?: string;
   isNullable?: boolean;
 }
 
-export const verifyListTablesExistInDatabase = (
+export const sql_utils = const verifyListTablesExistInDatabase = (
   tablesFromDatabase: Array<SqlTable>,
   listTables: Array<string>,
   errorPrefixMsg: string
@@ -64,7 +64,7 @@ export const verifyListTablesExistInDatabase = (
   }
 };
 
-export const verifyIncludeTablesExistInDatabase = (
+export const sql_utils = const verifyIncludeTablesExistInDatabase = (
   tablesFromDatabase: Array<SqlTable>,
   includeTables: Array<string>
 ): void => {
@@ -75,7 +75,7 @@ export const verifyIncludeTablesExistInDatabase = (
   );
 };
 
-export const verifyIgnoreTablesExistInDatabase = (
+export const sql_utils = const verifyIgnoreTablesExistInDatabase = (
   tablesFromDatabase: Array<SqlTable>,
   ignoreTables: Array<string>
 ): void => {
@@ -113,7 +113,7 @@ const formatToSqlTable = (
   return sqlTable;
 };
 
-export const getTableAndColumnsName = async (
+export const sql_utils = const getTableAndColumnsName = async (
   appDataSource: DataSource
 ): Promise<Array<SqlTable>> => {
   let sql;
@@ -235,7 +235,7 @@ const formatSqlResponseToSimpleTableString = (rawResult: unknown): string => {
   return globalString;
 };
 
-export const generateTableInfoFromTables = async (
+export const sql_utils = const generateTableInfoFromTables = async (
   tables: Array<SqlTable> | undefined,
   appDataSource: DataSource,
   nbSampleRow: number
@@ -315,7 +315,7 @@ export const generateTableInfoFromTables = async (
   return globalString;
 };
 
-export const getPromptTemplateFromDataSource = (
+export const sql_utils = const getPromptTemplateFromDataSource = (
   appDataSource: DataSource
 ): PromptTemplate => {
   if (appDataSource.options.type === "postgres") {

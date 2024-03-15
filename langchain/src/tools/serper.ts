@@ -5,10 +5,10 @@ import { Tool } from "./base.js";
  * Defines the parameters that can be passed to the Serper class during
  * instantiation. It includes `gl` and `hl` which are optional.
  */
-export type SerperParameters = {
+export const serper = type SerperParameters = {
   gl?: string;
   hl?: string;
-};
+}
 
 /**
  * Wrapper around serper.

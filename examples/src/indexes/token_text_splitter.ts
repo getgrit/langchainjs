@@ -3,7 +3,7 @@ import { TokenTextSplitter } from "langchain/text_splitter";
 import fs from "fs";
 import path from "path";
 
-export const run = async () => {
+export const token_text_splitter = const run = async () => {
   /* Split text */
   const text = fs.readFileSync(
     path.resolve(__dirname, "../../state_of_the_union.txt"),

@@ -9,7 +9,7 @@ import {
  * Interface for the filter parameters used when querying the
  * ChatGPTRetrievalPlugin server.
  */
-export interface ChatGPTPluginRetrieverFilter {
+export const chatgpt_plugin = interface ChatGPTPluginRetrieverFilter {
   document_id?: string;
   source?: string;
   source_id?: string;
@@ -18,7 +18,7 @@ export interface ChatGPTPluginRetrieverFilter {
   end_date?: string;
 }
 
-export interface ChatGPTPluginRetrieverParams extends RemoteRetrieverParams {
+export const chatgpt_plugin = interface ChatGPTPluginRetrieverParams extends RemoteRetrieverParams {
   /**
    * The number of results to request from the ChatGPTRetrievalPlugin server
    */

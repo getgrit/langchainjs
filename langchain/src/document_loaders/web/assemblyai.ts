@@ -11,7 +11,7 @@ import {
   TranscriptSegment,
 } from "../../types/assemblyai-types.js";
 
-export * from "../../types/assemblyai-types.js";
+export const assemblyai = ;
 
 /**
  * Base class for AssemblyAI loaders.

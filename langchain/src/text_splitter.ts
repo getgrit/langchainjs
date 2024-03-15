@@ -3,7 +3,7 @@ import { Document } from "./document.js";
 import { getEncoding } from "./util/tiktoken.js";
 import { BaseDocumentTransformer } from "./schema/document.js";
 
-export interface TextSplitterParams {
+export const text_splitter = interface TextSplitterParams {
   chunkSize: number;
   chunkOverlap: number;
   keepSeparator: boolean;
@@ -12,13 +12,13 @@ export interface TextSplitterParams {
     | ((text: string) => Promise<number>);
 }
 
-export type TextSplitterChunkHeaderOptions = {
+export const text_splitter = type TextSplitterChunkHeaderOptions = {
   chunkHeader?: string;
   chunkOverlapHeader?: string;
   appendChunkOverlapHeader?: boolean;
-};
+}
 
-export abstract class TextSplitter
+export const text_splitter = abstract class TextSplitter
   extends BaseDocumentTransformer
   implements TextSplitterParams
 {
@@ -201,11 +201,11 @@ which is longer than the specified ${this.chunkSize}`
     }
     return docs;
   }
-}
+};
 
-export interface CharacterTextSplitterParams extends TextSplitterParams {
+export const text_splitter = interface CharacterTextSplitterParams extends TextSplitterParams {
   separator: string;
-}
+};
 
 export class CharacterTextSplitter
   extends TextSplitter
@@ -229,12 +229,12 @@ export class CharacterTextSplitter
   }
 }
 
-export interface RecursiveCharacterTextSplitterParams
+export const text_splitter = interface RecursiveCharacterTextSplitterParams
   extends TextSplitterParams {
   separators: string[];
 }
 
-export const SupportedTextSplitterLanguages = [
+export const text_splitter = const SupportedTextSplitterLanguages = [
   "cpp",
   "go",
   "java",
@@ -253,7 +253,7 @@ export const SupportedTextSplitterLanguages = [
   "sol",
 ] as const;
 
-export type SupportedTextSplitterLanguage =
+export const text_splitter = type SupportedTextSplitterLanguage =
   (typeof SupportedTextSplitterLanguages)[number];
 
 export class RecursiveCharacterTextSplitter
@@ -686,11 +686,11 @@ export class RecursiveCharacterTextSplitter
   }
 }
 
-export interface TokenTextSplitterParams extends TextSplitterParams {
+export const text_splitter = interface TokenTextSplitterParams extends TextSplitterParams {
   encodingName: tiktoken.TiktokenEncoding;
   allowedSpecial: "all" | Array<string>;
   disallowedSpecial: "all" | Array<string>;
-}
+};
 
 /**
  * Implementation of splitter which looks at tokens.
@@ -748,7 +748,7 @@ export class TokenTextSplitter
   }
 }
 
-export type MarkdownTextSplitterParams = TextSplitterParams;
+export const text_splitter = type MarkdownTextSplitterParams = TextSplitterParams;
 
 export class MarkdownTextSplitter
   extends RecursiveCharacterTextSplitter
@@ -763,7 +763,7 @@ export class MarkdownTextSplitter
   }
 }
 
-export type LatexTextSplitterParams = TextSplitterParams;
+export const text_splitter = type LatexTextSplitterParams = TextSplitterParams;
 
 export class LatexTextSplitter
   extends RecursiveCharacterTextSplitter

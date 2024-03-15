@@ -20,7 +20,7 @@ interface MemoryVector {
  * `MemoryVectorStore` constructor. It includes an optional `similarity`
  * function.
  */
-export interface MemoryVectorStoreArgs {
+export const memory = interface MemoryVectorStoreArgs {
   similarity?: typeof ml_distance_similarity.cosine;
 }
 

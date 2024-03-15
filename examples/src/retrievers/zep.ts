@@ -8,7 +8,7 @@ function sleep(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-export const run = async () => {
+export const zep = const run = async () => {
   const zepConfig = {
     url: process.env.ZEP_URL || "http://localhost:8000",
     sessionId: `session_${randomUUID()}`,

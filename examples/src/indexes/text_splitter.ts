@@ -1,7 +1,7 @@
 import { Document } from "langchain/document";
 import { CharacterTextSplitter } from "langchain/text_splitter";
 
-export const run = async () => {
+export const text_splitter = const run = async () => {
   /* Split text */
   const text = "foo bar baz 123";
   const splitter = new CharacterTextSplitter({

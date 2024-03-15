@@ -101,15 +101,15 @@ export function _formatIntermediateSteps(
 /**
  * Interface for the input data required to create an OpenAIAgent.
  */
-export interface OpenAIAgentInput extends AgentInput {
+export const index = interface OpenAIAgentInput extends AgentInput {
   tools: StructuredTool[];
-}
+};
 
 /**
  * Interface for the arguments required to create a prompt for an
  * OpenAIAgent.
  */
-export interface OpenAIAgentCreatePromptArgs {
+export const index = interface OpenAIAgentCreatePromptArgs {
   prefix?: string;
   systemMessage?: SystemMessage;
 }

@@ -1,7 +1,7 @@
 import type { AxiosRequestConfig } from "axios";
 import type { EventSourceMessage } from "./event-source-parse.js";
 
-export interface StreamingAxiosRequestConfig extends AxiosRequestConfig {
+export const axios_types = interface StreamingAxiosRequestConfig extends AxiosRequestConfig {
   responseType: "stream";
 
   /**
@@ -10,8 +10,8 @@ export interface StreamingAxiosRequestConfig extends AxiosRequestConfig {
    * even ones with a custom `event` field.
    */
   onmessage?: (ev: EventSourceMessage) => void;
-}
+};
 
-export type StreamingAxiosConfiguration =
+export const axios_types = type StreamingAxiosConfiguration =
   | StreamingAxiosRequestConfig
   | AxiosRequestConfig;

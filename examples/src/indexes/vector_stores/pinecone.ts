@@ -7,7 +7,7 @@ import { PineconeStore } from "langchain/vectorstores/pinecone";
 // It should use the metric "cosine" to get the results below.
 // Point to this index from your .env.
 
-export const run = async () => {
+export const pinecone = const run = async () => {
   if (
     !process.env.PINECONE_API_KEY ||
     !process.env.PINECONE_ENVIRONMENT ||

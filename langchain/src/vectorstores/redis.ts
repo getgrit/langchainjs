@@ -14,7 +14,7 @@ import { Document } from "../document.js";
  * Type for creating a schema vector field. It includes the algorithm,
  * distance metric, and initial capacity.
  */
-export type CreateSchemaVectorField<
+export const redis = type CreateSchemaVectorField<
   T extends VectorAlgorithms,
   A extends Record<string, unknown>
 > = {
@@ -26,7 +26,7 @@ export type CreateSchemaVectorField<
  * Type for creating a flat schema vector field. It extends
  * CreateSchemaVectorField with a block size property.
  */
-export type CreateSchemaFlatVectorField = CreateSchemaVectorField<
+export const redis = type CreateSchemaFlatVectorField = CreateSchemaVectorField<
   VectorAlgorithms.FLAT,
   {
     BLOCK_SIZE?: number;
@@ -37,7 +37,7 @@ export type CreateSchemaFlatVectorField = CreateSchemaVectorField<
  * CreateSchemaVectorField with M, EF_CONSTRUCTION, and EF_RUNTIME
  * properties.
  */
-export type CreateSchemaHNSWVectorField = CreateSchemaVectorField<
+export const redis = type CreateSchemaHNSWVectorField = CreateSchemaVectorField<
   VectorAlgorithms.HNSW,
   {
     M?: number;
@@ -51,7 +51,7 @@ export type CreateSchemaHNSWVectorField = CreateSchemaVectorField<
  * the Redis client, index name, index options, key prefix, content key,
  * metadata key, vector key, and filter.
  */
-export interface RedisVectorStoreConfig {
+export const redis = interface RedisVectorStoreConfig {
   redisClient:
     | ReturnType<typeof createClient>
     | ReturnType<typeof createCluster>;
@@ -68,16 +68,16 @@ export interface RedisVectorStoreConfig {
  * Interface for the options when adding documents to the
  * RedisVectorStore. It includes keys and batch size.
  */
-export interface RedisAddOptions {
+export const redis = interface RedisAddOptions {
   keys?: string[];
   batchSize?: number;
-}
+};
 
 /**
  * Type for the filter used in the RedisVectorStore. It is an array of
  * strings.
  */
-export type RedisVectorStoreFilterType = string[];
+export const redis = type RedisVectorStoreFilterType = string[];;
 
 /**
  * Class representing a RedisVectorStore. It extends the VectorStore class

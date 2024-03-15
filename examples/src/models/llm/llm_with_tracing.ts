@@ -3,7 +3,7 @@ import { ChatOpenAI } from "langchain/chat_models/openai";
 import { SystemMessage, HumanMessage } from "langchain/schema";
 import * as process from "process";
 
-export const run = async () => {
+export const llm_with_tracing = const run = async () => {
   process.env.LANGCHAIN_HANDLER = "langchain";
   const model = new OpenAI({ temperature: 0.9 });
   const resA = await model.call(

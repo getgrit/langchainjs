@@ -5,7 +5,7 @@ import { Tool } from "./base.js";
  * @interface DataForSeoApiConfig
  * @description Represents the configuration object used to set up a DataForSeoAPISearch instance.
  */
-export interface DataForSeoApiConfig {
+export const dataforseo_api_search = interface DataForSeoApiConfig {
   /**
    * @property apiLogin
    * @type {string}

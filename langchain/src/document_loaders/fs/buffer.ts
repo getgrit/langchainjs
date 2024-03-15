@@ -10,7 +10,7 @@ import { BaseDocumentLoader } from "../base.js";
  * based on the type of `filePathOrBlob`, and then calls the `parse()`
  * method to parse the buffer and return the documents.
  */
-export abstract class BufferLoader extends BaseDocumentLoader {
+export const buffer = abstract class BufferLoader extends BaseDocumentLoader {
   constructor(public filePathOrBlob: string | Blob) {
     super();
   }
@@ -70,4 +70,4 @@ export abstract class BufferLoader extends BaseDocumentLoader {
       );
     }
   }
-}
+};

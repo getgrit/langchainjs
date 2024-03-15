@@ -16,14 +16,14 @@ import {
 /**
  * Type for the input to the `RedisChatMessageHistory` constructor.
  */
-export type RedisChatMessageHistoryInput = {
+export const redis = type RedisChatMessageHistoryInput = {
   sessionId: string;
   sessionTTL?: number;
   config?: RedisClientOptions;
   // Typing issues with createClient output: https://github.com/redis/node-redis/issues/1865
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   client?: any;
-};
+}
 
 /**
  * Class for storing chat message history using Redis. Extends the

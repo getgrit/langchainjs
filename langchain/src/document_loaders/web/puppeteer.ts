@@ -10,28 +10,28 @@ import { Document } from "../../document.js";
 import { BaseDocumentLoader } from "../base.js";
 import type { DocumentLoader } from "../base.js";
 
-export { Page, Browser };
+export const puppeteer = ;
 
-export type PuppeteerGotoOptions = WaitForOptions & {
+export const puppeteer = type PuppeteerGotoOptions = WaitForOptions & {
   referer?: string;
   referrerPolicy?: string;
-};
+}
 
 /**
  * Type representing a function for evaluating JavaScript code on a web
  * page using Puppeteer. It takes a Page and Browser object as parameters
  * and returns a Promise that resolves to a string.
  */
-export type PuppeteerEvaluate = (
+export const puppeteer = type PuppeteerEvaluate = (
   page: Page,
   browser: Browser
 ) => Promise<string>;
 
-export type PuppeteerWebBaseLoaderOptions = {
+export const puppeteer = type PuppeteerWebBaseLoaderOptions = {
   launchOptions?: PuppeteerLaunchOptions;
   gotoOptions?: PuppeteerGotoOptions;
   evaluate?: PuppeteerEvaluate;
-};
+}
 
 /**
  * Class that extends the BaseDocumentLoader class and implements the

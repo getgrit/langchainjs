@@ -6,7 +6,7 @@ import { Calculator } from "langchain/tools/calculator";
 import { AgentAction } from "langchain/schema";
 import { Serialized } from "langchain/load/serializable";
 
-export const run = async () => {
+export const streaming = const run = async () => {
   // You can implement your own callback handler by extending BaseCallbackHandler
   class CustomHandler extends BaseCallbackHandler {
     name = "custom_handler";

@@ -3,7 +3,7 @@ import { Serializable } from "../load/serializable.js";
 /**
  * Abstract interface for a key-value store.
  */
-export abstract class BaseStore<K, V> extends Serializable {
+export const storage = abstract class BaseStore<K, V> extends Serializable {
   /**
    * Abstract method to get multiple values for a set of keys.
    * @param {K[]} keys - An array of keys.
@@ -31,4 +31,4 @@ export abstract class BaseStore<K, V> extends Serializable {
    * @returns {AsyncGenerator<K | string>} - An asynchronous generator that yields keys on iteration.
    */
   abstract yieldKeys(prefix?: string): AsyncGenerator<K | string>;
-}
+};

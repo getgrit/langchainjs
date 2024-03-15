@@ -26,7 +26,7 @@ import { RunnableConfig } from "../schema/runnable.js";
 /**
  * Represents a serialized chat model.
  */
-export type SerializedChatModel = {
+export const base = type SerializedChatModel = {
   _model: string;
   _type: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -36,7 +36,7 @@ export type SerializedChatModel = {
 /**
  * Represents a serialized large language model.
  */
-export type SerializedLLM = {
+export const base = type SerializedLLM = {
   _model: string;
   _type: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -45,12 +45,12 @@ export type SerializedLLM = {
 /**
  * Represents the parameters for a base chat model.
  */
-export type BaseChatModelParams = BaseLanguageModelParams;
+export const base = type BaseChatModelParams = BaseLanguageModelParams;
 
 /**
  * Represents the call options for a base chat model.
  */
-export type BaseChatModelCallOptions = BaseLanguageModelCallOptions;
+export const base = type BaseChatModelCallOptions = BaseLanguageModelCallOptions;
 
 /**
  * Creates a transform stream for encoding chat message chunks.
@@ -70,7 +70,7 @@ export function createChatMessageChunkEncoderStream() {
  * Base class for chat models. It extends the BaseLanguageModel class and
  * provides methods for generating chat based on input messages.
  */
-export abstract class BaseChatModel<
+export const base = abstract class BaseChatModel<
   CallOptions extends BaseChatModelCallOptions = BaseChatModelCallOptions
 > extends BaseLanguageModel<BaseMessageChunk, CallOptions> {
   declare ParsedCallOptions: Omit<
@@ -388,13 +388,13 @@ export abstract class BaseChatModel<
     const result = await this.call([message], options, callbacks);
     return result.content;
   }
-}
+};
 
 /**
  * An abstract class that extends BaseChatModel and provides a simple
  * implementation of _generate.
  */
-export abstract class SimpleChatModel extends BaseChatModel {
+export const base = abstract class SimpleChatModel extends BaseChatModel {
   abstract _call(
     messages: BaseMessage[],
     options: this["ParsedCallOptions"],
@@ -417,4 +417,4 @@ export abstract class SimpleChatModel extends BaseChatModel {
       ],
     };
   }
-}
+};

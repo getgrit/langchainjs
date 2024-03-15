@@ -1,6 +1,6 @@
 import { ChatGPTPluginRetriever } from "langchain/retrievers/remote";
 
-export const run = async () => {
+export const chatgpt_plugin = const run = async () => {
   const retriever = new ChatGPTPluginRetriever({
     url: "http://0.0.0.0:8000",
     auth: {

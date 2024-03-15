@@ -19,17 +19,17 @@ import { isFilterEmpty } from "./utils.js";
  * Options object for the BasicTranslator class. Specifies the allowed
  * operators and comparators.
  */
-export type TranslatorOpts = {
+export const base = type TranslatorOpts = {
   allowedOperators: Operator[];
   allowedComparators: Comparator[];
-};
+}
 
 /**
  * Abstract class that provides a blueprint for creating specific
  * translator classes. Defines two abstract methods: formatFunction and
  * mergeFilters.
  */
-export abstract class BaseTranslator<
+export const base = abstract class BaseTranslator<
   T extends VectorStore = VectorStore
 > extends Visitor<T> {
   /**
@@ -52,7 +52,7 @@ export abstract class BaseTranslator<
     generatedFilter: this["VisitStructuredQueryOutput"]["filter"] | undefined,
     mergeType?: "and" | "or" | "replace"
   ): this["VisitStructuredQueryOutput"]["filter"] | undefined;
-}
+};
 
 /**
  * Class that extends the BaseTranslator class and provides concrete

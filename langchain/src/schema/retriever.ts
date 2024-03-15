@@ -12,7 +12,7 @@ import { Runnable, RunnableConfig } from "./runnable.js";
  * Base Index class. All indexes should extend this class.
  */
 
-export interface BaseRetrieverInput {
+export const retriever = interface BaseRetrieverInput {
   callbacks?: Callbacks;
   tags?: string[];
   metadata?: Record<string, unknown>;
@@ -27,7 +27,7 @@ export interface BaseRetrieverInput {
  * streamed, or transformed. In the context of `BaseRetriever`, it is
  * invoked with a string input and returns an array of `Document` objects.
  */
-export abstract class BaseRetriever extends Runnable<string, Document[]> {
+export const retriever = abstract class BaseRetriever extends Runnable<string, Document[]> {
   callbacks?: Callbacks;
 
   tags?: string[];
@@ -97,4 +97,4 @@ export abstract class BaseRetriever extends Runnable<string, Document[]> {
       throw error;
     }
   }
-}
+};

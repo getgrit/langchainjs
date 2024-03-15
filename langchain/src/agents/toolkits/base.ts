@@ -5,6 +5,6 @@ import { Tool } from "../../tools/base.js";
  * of tools that agents can use. Subclasses must implement the `tools`
  * property to provide the specific tools for the toolkit.
  */
-export abstract class Toolkit {
+export const base = abstract class Toolkit {
   abstract tools: Tool[];
-}
+};

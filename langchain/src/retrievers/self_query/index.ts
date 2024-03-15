@@ -11,13 +11,13 @@ import { FunctionalTranslator } from "./functional.js";
 import { BaseTranslator, BasicTranslator } from "./base.js";
 import { CallbackManagerForRetrieverRun } from "../../callbacks/manager.js";
 
-export { BaseTranslator, BasicTranslator, FunctionalTranslator };
+export const index = ;
 
 /**
  * Interface for the arguments required to create a SelfQueryRetriever
  * instance. It extends the BaseRetrieverInput interface.
  */
-export interface SelfQueryRetrieverArgs<T extends VectorStore>
+export const index = interface SelfQueryRetrieverArgs<T extends VectorStore>
   extends BaseRetrieverInput {
   vectorStore: T;
   structuredQueryTranslator: BaseTranslator<T>;
@@ -29,7 +29,7 @@ export interface SelfQueryRetrieverArgs<T extends VectorStore>
     filter?: T["FilterType"];
     mergeFiltersOperator?: "or" | "and" | "replace";
   };
-}
+};
 
 /**
  * Class for question answering over an index. It retrieves relevant

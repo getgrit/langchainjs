@@ -2,7 +2,7 @@ import { OpenAI } from "langchain/llms/openai";
 import { RegexParser } from "langchain/output_parsers";
 import { PromptTemplate } from "langchain/prompts";
 
-export const run = async () => {
+export const regex_parser = const run = async () => {
   const parser = new RegexParser(
     /Humor: ([0-9]+), Sophistication: (A|B|C|D|E)/,
     ["mark", "grade"],

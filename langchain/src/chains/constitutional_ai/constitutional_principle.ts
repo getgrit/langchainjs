@@ -35,6 +35,6 @@ export class ConstitutionalPrinciple {
   }
 }
 
-export const PRINCIPLES: {
+export const constitutional_principle = const PRINCIPLES: {
   [key: string]: ConstitutionalPrinciple;
 } = {};

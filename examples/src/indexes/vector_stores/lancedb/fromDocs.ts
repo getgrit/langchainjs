@@ -10,7 +10,7 @@ import { connect } from "vectordb";
 const loader = new TextLoader("src/document_loaders/example_data/example.txt");
 const docs = await loader.load();
 
-export const run = async () => {
+export const fromDocs = const run = async () => {
   const dir = await fs.mkdtemp(path.join(os.tmpdir(), "lancedb-"));
   const db = await connect(dir);
   const table = await db.createTable("vectors", [

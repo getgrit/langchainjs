@@ -11,12 +11,12 @@ import {
 import { BaseLanguageModel } from "../../base_language/index.js";
 import { ChainValues } from "../../schema/index.js";
 
-export type GenerativeAgentMemoryConfig = {
+export const generative_agent_memory = type GenerativeAgentMemoryConfig = {
   reflectionThreshold?: number;
   importanceWeight?: number;
   verbose?: boolean;
   maxTokensLimit?: number;
-};
+}
 
 /**
  * Class that manages the memory of a generative agent in LangChain. It

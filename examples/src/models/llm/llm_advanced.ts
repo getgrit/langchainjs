@@ -1,6 +1,6 @@
 import { OpenAI } from "langchain/llms/openai";
 
-export const run = async () => {
+export const llm_advanced = const run = async () => {
   const model = new OpenAI({
     // customize openai model that's used, `text-davinci-003` is the default
     modelName: "text-ada-001",

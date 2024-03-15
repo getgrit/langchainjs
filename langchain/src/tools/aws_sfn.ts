@@ -10,7 +10,7 @@ import { Tool, ToolParams } from "./base.js";
 /**
  * Interface for AWS Step Functions configuration.
  */
-export interface SfnConfig {
+export const aws_sfn = interface SfnConfig {
   stateMachineArn: string;
   region?: string;
   accessKeyId?: string;

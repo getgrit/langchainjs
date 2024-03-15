@@ -2,7 +2,7 @@ import { DirectoryLoader } from "langchain/document_loaders/fs/directory";
 import { PDFLoader } from "langchain/document_loaders/fs/pdf";
 import { RecursiveCharacterTextSplitter } from "langchain/text_splitter";
 
-export const run = async () => {
+export const pdf_directory = const run = async () => {
   /* Load all PDFs within the specified directory */
   const directoryLoader = new DirectoryLoader(
     "src/document_loaders/example_data/",

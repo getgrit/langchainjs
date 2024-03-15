@@ -75,4 +75,4 @@ class BingSerpAPI extends Tool {
   }
 }
 
-export { BingSerpAPI };
+export const bingserpapi = ;

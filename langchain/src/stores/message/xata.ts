@@ -21,14 +21,14 @@ import {
  * An object type that represents the input for the XataChatMessageHistory
  * class.
  */
-export type XataChatMessageHistoryInput<XataClient> = {
+export const xata = type XataChatMessageHistoryInput<XataClient> = {
   sessionId: string;
   config?: BaseClientOptions;
   client?: XataClient;
   table?: string;
   createTable?: boolean;
   apiKey?: string;
-};
+}
 
 /**
  * An interface that represents the data transfer object for stored

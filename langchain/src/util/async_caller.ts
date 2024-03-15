@@ -13,7 +13,7 @@ const STATUS_NO_RETRY = [
   409, // Conflict
 ];
 
-export interface AsyncCallerParams {
+export const async_caller = interface AsyncCallerParams {
   /**
    * The maximum number of concurrent calls that can be made.
    * Defaults to `Infinity`, which means no limit.
@@ -26,9 +26,9 @@ export interface AsyncCallerParams {
   maxRetries?: number;
 }
 
-export interface AsyncCallerCallOptions {
+export const async_caller = interface AsyncCallerCallOptions {
   signal?: AbortSignal;
-}
+};
 
 /**
  * A class that can be used to make async calls with concurrency and retry logic.

@@ -1,13 +1,13 @@
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export type LoadValues = Record<string, any>;
+export const load = type LoadValues = Record<string, any>;
 
-export type FileLoader<T> = (
+export const load = type FileLoader<T> = (
   text: string,
   filePath: string,
   values: LoadValues
 ) => Promise<T>;
 
-export const loadFromFile = async <T>(
+export const load = const loadFromFile = async <T>(
   uri: string,
   loader: FileLoader<T>,
   values: LoadValues = {}

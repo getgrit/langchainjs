@@ -18,9 +18,9 @@ import { Docstore } from "../schema/index.js";
 /**
  * Allows us to create IdDocument classes that contain the ID.
  */
-export interface IdDocumentInput extends DocumentInput {
+export const googlevertexai = interface IdDocumentInput extends DocumentInput {
   id?: string;
-}
+};
 
 /**
  * A Document that optionally includes the ID of the document.
@@ -85,9 +85,9 @@ class IndexEndpointConnection extends GoogleVertexAIConnection<
  * Used to represent parameters that are necessary to delete documents
  * from the matching engine. These must be a list of string IDs
  */
-export interface MatchingEngineDeleteParams {
+export const googlevertexai = interface MatchingEngineDeleteParams {
   ids: string[];
-}
+};
 
 interface RemoveDatapointParams extends GoogleVertexAIConnectionParams {
   index: string;
@@ -138,7 +138,7 @@ interface UpsertDatapointParams extends GoogleVertexAIConnectionParams {
   index: string;
 }
 
-export interface Restriction {
+export const googlevertexai = interface Restriction {
   namespace: string;
   allowList?: string[];
   denyList?: string[];
@@ -277,7 +277,7 @@ class FindNeighborsConnection
  * Information about the Matching Engine public API endpoint.
  * Primarily exported to allow for testing.
  */
-export interface PublicAPIEndpointInfo {
+export const googlevertexai = interface PublicAPIEndpointInfo {
   apiEndpoint?: string;
 
   deployedIndexId?: string;
@@ -286,7 +286,7 @@ export interface PublicAPIEndpointInfo {
 /**
  * Parameters necessary to configure the Matching Engine.
  */
-export interface MatchingEngineArgs
+export const googlevertexai = interface MatchingEngineArgs
   extends GoogleVertexAIConnectionParams,
     IndexEndpointConnectionParams,
     UpsertDatapointParams {

@@ -1,7 +1,7 @@
 import { Milvus } from "langchain/vectorstores/milvus";
 import { OpenAIEmbeddings } from "langchain/embeddings/openai";
 
-export const run = async () => {
+export const milvus = const run = async () => {
   const vectorStore = await Milvus.fromTexts(
     ["Hello world", "Bye bye", "hello nice world"],
     [{ id: 2 }, { id: 1 }, { id: 3 }],

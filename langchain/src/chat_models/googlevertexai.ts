@@ -19,7 +19,7 @@ import { BaseLanguageModelCallOptions } from "../base_language/index.js";
  * Represents a single "example" exchange that can be provided to
  * help illustrate what a model response should look like.
  */
-export interface ChatExample {
+export const googlevertexai = interface ChatExample {
   input: BaseMessage;
   output: BaseMessage;
 }
@@ -37,17 +37,17 @@ interface GoogleVertexAIChatExample {
  * Represents the author of a chat message in the Google Vertex AI chat
  * model.
  */
-export type GoogleVertexAIChatAuthor =
+export const googlevertexai = type GoogleVertexAIChatAuthor =
   | "user" // Represents the human for Code and CodeChat models
   | "bot" // Represents the AI for Code models
   | "system" // Represents the AI for CodeChat models
   | "context"; // Represents contextual instructions
 
-export type GoogleVertexAIChatMessageFields = {
+export const googlevertexai = type GoogleVertexAIChatMessageFields = {
   author?: GoogleVertexAIChatAuthor;
   content: string;
   name?: string;
-};
+}
 
 /**
  * Represents a chat message in the Google Vertex AI chat model.
@@ -136,7 +136,7 @@ export class GoogleVertexAIChatMessage {
 /**
  * Represents an instance of the Google Vertex AI chat model.
  */
-export interface GoogleVertexAIChatInstance {
+export const googlevertexai = interface GoogleVertexAIChatInstance {
   context?: string;
   examples?: GoogleVertexAIChatExample[];
   messages: GoogleVertexAIChatMessage[];
@@ -145,7 +145,7 @@ export interface GoogleVertexAIChatInstance {
 /**
  * Defines the prediction output of the Google Vertex AI chat model.
  */
-export interface GoogleVertexAIChatPrediction
+export const googlevertexai = interface GoogleVertexAIChatPrediction
   extends GoogleVertexAIBasePrediction {
   candidates: GoogleVertexAIChatMessage[];
 }
@@ -153,7 +153,7 @@ export interface GoogleVertexAIChatPrediction
 /**
  * Defines the input to the Google Vertex AI chat model.
  */
-export interface GoogleVertexAIChatInput extends GoogleVertexAIBaseLLMInput {
+export const googlevertexai = interface GoogleVertexAIChatInput extends GoogleVertexAIBaseLLMInput {
   /** Instructions how the model should respond */
   context?: string;
 

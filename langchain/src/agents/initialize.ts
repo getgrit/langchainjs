@@ -22,7 +22,7 @@ type AgentType =
 /**
  * @deprecated use initializeAgentExecutorWithOptions instead
  */
-export const initializeAgentExecutor = async (
+export const initialize = const initializeAgentExecutor = async (
   tools: Tool[],
   llm: BaseLanguageModel,
   _agentType?: AgentType,
@@ -64,7 +64,7 @@ export const initializeAgentExecutor = async (
 /**
  * @interface
  */
-export type InitializeAgentExecutorOptions =
+export const initialize = type InitializeAgentExecutorOptions =
   | ({
       agentType: "zero-shot-react-description";
       agentArgs?: Parameters<typeof ZeroShotAgent.fromLLMAndTools>[2];
@@ -83,7 +83,7 @@ export type InitializeAgentExecutorOptions =
 /**
  * @interface
  */
-export type InitializeAgentExecutorOptionsStructured =
+export const initialize = type InitializeAgentExecutorOptionsStructured =
   | ({
       agentType: "structured-chat-zero-shot-react-description";
       agentArgs?: Parameters<typeof StructuredChatAgent.fromLLMAndTools>[2];
@@ -100,16 +100,16 @@ export type InitializeAgentExecutorOptionsStructured =
  * @param options Options for the agent, including agentType, agentArgs, and other options for AgentExecutor.fromAgentAndTools
  * @returns AgentExecutor
  */
-export async function initializeAgentExecutorWithOptions(
+export const initialize = async function initializeAgentExecutorWithOptions(
   tools: StructuredTool[],
   llm: BaseLanguageModel,
   options: InitializeAgentExecutorOptionsStructured
-): Promise<AgentExecutor>;
-export async function initializeAgentExecutorWithOptions(
+): Promise<AgentExecutor>;;
+export const initialize = async function initializeAgentExecutorWithOptions(
   tools: Tool[],
   llm: BaseLanguageModel,
   options?: InitializeAgentExecutorOptions
-): Promise<AgentExecutor>;
+): Promise<AgentExecutor>;;
 export async function initializeAgentExecutorWithOptions(
   tools: StructuredTool[] | Tool[],
   llm: BaseLanguageModel,

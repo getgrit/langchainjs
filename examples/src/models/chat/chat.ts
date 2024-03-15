@@ -1,7 +1,7 @@
 import { ChatOpenAI } from "langchain/chat_models/openai";
 import { HumanMessage, SystemMessage } from "langchain/schema";
 
-export const run = async () => {
+export const chat = const run = async () => {
   const chat = new ChatOpenAI({ modelName: "gpt-3.5-turbo" });
   // Pass in a list of messages to `call` to start a conversation. In this simple example, we only pass in one message.
   const responseA = await chat.call([

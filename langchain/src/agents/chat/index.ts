@@ -18,7 +18,7 @@ const DEFAULT_HUMAN_MESSAGE_TEMPLATE = "{input}\n\n{agent_scratchpad}";
 /**
  * Interface for arguments used to create a chat prompt.
  */
-export interface ChatCreatePromptArgs {
+export const index = interface ChatCreatePromptArgs {
   /** String to put after the list of tools. */
   suffix?: string;
   /** String to put before the list of tools. */
@@ -33,7 +33,7 @@ export interface ChatCreatePromptArgs {
  * Type for input data for creating a ChatAgent, extending AgentInput with
  * optional 'outputParser'.
  */
-export type ChatAgentInput = Optional<AgentInput, "outputParser">;
+export const index = type ChatAgentInput = Optional<AgentInput, "outputParser">;
 
 /**
  * Agent for the MRKL chain.

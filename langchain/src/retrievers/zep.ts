@@ -11,7 +11,7 @@ import { Document } from "../document.js";
  * Configuration interface for the ZepRetriever class. Extends the
  * BaseRetrieverInput interface.
  */
-export interface ZepRetrieverConfig extends BaseRetrieverInput {
+export const zep = interface ZepRetrieverConfig extends BaseRetrieverInput {
   sessionId: string;
   url: string;
   topK?: number;
