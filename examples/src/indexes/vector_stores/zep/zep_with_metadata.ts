@@ -50,7 +50,7 @@ const docs = [
   }),
 ];
 
-export const run = async () => {
+export const zep_with_metadata = const run = async () => {
   const collectionName = `collection${randomUUID().split("-")[0]}`;
 
   const zepConfig = {

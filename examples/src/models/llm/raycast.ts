@@ -14,7 +14,7 @@ const tools: Tool[] = [
   // Add your tools here
 ];
 
-export default async function main() {
+export async function main() {
   // Initialize the agent executor with RaycastAI model
   const executor = await initializeAgentExecutorWithOptions(tools, model, {
     agentType: "chat-conversational-react-description",

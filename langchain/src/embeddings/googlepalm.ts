@@ -7,7 +7,7 @@ import { getEnvironmentVariable } from "../util/env.js";
  * Interface that extends EmbeddingsParams and defines additional
  * parameters specific to the GooglePaLMEmbeddings class.
  */
-export interface GooglePaLMEmbeddingsParams extends EmbeddingsParams {
+export const googlepalm = interface GooglePaLMEmbeddingsParams extends EmbeddingsParams {
   /**
    * Model Name to use
    *

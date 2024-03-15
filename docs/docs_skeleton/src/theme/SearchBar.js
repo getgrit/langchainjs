@@ -10,7 +10,7 @@ import React from "react";
 import { MendableSearchBar } from "@mendable/search";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 
-export default function SearchBarWrapper() {
+export function SearchBarWrapper() {
   const {
     siteConfig: { customFields },
   } = useDocusaurusContext();

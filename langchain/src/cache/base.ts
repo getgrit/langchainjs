@@ -10,5 +10,5 @@ import hash from "object-hash";
  *
  * TODO: Make cache key consistent across versions of langchain.
  */
-export const getCacheKey = (...strings: string[]): string =>
+export const base = const getCacheKey = (...strings: string[]): string =>
   hash(strings.join("_"));

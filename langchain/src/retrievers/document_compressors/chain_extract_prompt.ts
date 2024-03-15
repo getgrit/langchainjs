@@ -1,4 +1,4 @@
-export const PROMPT_TEMPLATE = (
+export const chain_extract_prompt = const PROMPT_TEMPLATE = (
   noOutputStr: string
 ) => `Given the following question and context, extract any part of the context *AS IS* that is relevant to answer the question. If none of the context is relevant return ${noOutputStr}.
 

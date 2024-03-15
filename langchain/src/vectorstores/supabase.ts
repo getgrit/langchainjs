@@ -14,10 +14,10 @@ interface SearchEmbeddingsParams {
 }
 
 // eslint-disable-next-line @typescript-eslint/ban-types, @typescript-eslint/no-explicit-any
-export type SupabaseMetadata = Record<string, any>;
+export const supabase = type SupabaseMetadata = Record<string, any>;
 // eslint-disable-next-line @typescript-eslint/ban-types, @typescript-eslint/no-explicit-any
-export type SupabaseFilter = PostgrestFilterBuilder<any, any, any>;
-export type SupabaseFilterRPCCall = (rpcCall: SupabaseFilter) => SupabaseFilter;
+export const supabase = type SupabaseFilter = PostgrestFilterBuilder<any, any, any>;
+export const supabase = type SupabaseFilterRPCCall = (rpcCall: SupabaseFilter) => SupabaseFilter;
 
 /**
  * Interface for the response returned when searching embeddings.
@@ -32,7 +32,7 @@ interface SearchEmbeddingsResponse {
 /**
  * Interface for the arguments required to initialize a Supabase library.
  */
-export interface SupabaseLibArgs {
+export const supabase = interface SupabaseLibArgs {
   client: SupabaseClient;
   tableName?: string;
   queryName?: string;

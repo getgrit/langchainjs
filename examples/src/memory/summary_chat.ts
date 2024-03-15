@@ -3,7 +3,7 @@ import { ConversationSummaryMemory } from "langchain/memory";
 import { LLMChain } from "langchain/chains";
 import { PromptTemplate } from "langchain/prompts";
 
-export const run = async () => {
+export const summary_chat = const run = async () => {
   const memory = new ConversationSummaryMemory({
     memoryKey: "chat_history",
     llm: new ChatOpenAI({ modelName: "gpt-3.5-turbo", temperature: 0 }),

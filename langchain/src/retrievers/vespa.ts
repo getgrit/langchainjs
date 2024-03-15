@@ -5,7 +5,7 @@ import {
   RemoteRetrieverParams,
 } from "./remote/base.js";
 
-export interface VespaRetrieverParams extends RemoteRetrieverParams {
+export const vespa = interface VespaRetrieverParams extends RemoteRetrieverParams {
   /**
    * The body of the query to send to Vespa
    */

@@ -11,9 +11,9 @@ import { BaseLangChain, BaseLangChainParams } from "../base_language/index.js";
 import { RunnableConfig } from "../schema/runnable.js";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export type LoadValues = Record<string, any>;
+export const base = type LoadValues = Record<string, any>;
 
-export interface ChainInputs extends BaseLangChainParams {
+export const base = interface ChainInputs extends BaseLangChainParams {
   memory?: BaseMemory;
 
   /**
@@ -25,7 +25,7 @@ export interface ChainInputs extends BaseLangChainParams {
 /**
  * Base interface that all chains must implement.
  */
-export abstract class BaseChain<
+export const base = abstract class BaseChain<
     RunInput extends ChainValues = ChainValues,
     RunOutput extends ChainValues = ChainValues
   >
@@ -274,4 +274,4 @@ export abstract class BaseChain<
         );
     }
   }
-}
+};

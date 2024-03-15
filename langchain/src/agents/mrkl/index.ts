@@ -17,7 +17,7 @@ import { FORMAT_INSTRUCTIONS, PREFIX, SUFFIX } from "./prompt.js";
 /**
  * Interface for creating a prompt for the ZeroShotAgent.
  */
-export interface ZeroShotCreatePromptArgs {
+export const index = interface ZeroShotCreatePromptArgs {
   /** String to put after the list of tools. */
   suffix?: string;
   /** String to put before the list of tools. */
@@ -30,7 +30,7 @@ export interface ZeroShotCreatePromptArgs {
  * Type for the input to the ZeroShotAgent, with the 'outputParser'
  * property made optional.
  */
-export type ZeroShotAgentInput = Optional<AgentInput, "outputParser">;
+export const index = type ZeroShotAgentInput = Optional<AgentInput, "outputParser">;
 
 /**
  * Agent for the MRKL chain.

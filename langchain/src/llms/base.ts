@@ -24,13 +24,13 @@ import {
 import { getBufferString } from "../memory/base.js";
 import { RunnableConfig } from "../schema/runnable.js";
 
-export type SerializedLLM = {
+export const base = type SerializedLLM = {
   _model: string;
   _type: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
 } & Record<string, any>;
 
-export interface BaseLLMParams extends BaseLanguageModelParams {
+export const base = interface BaseLLMParams extends BaseLanguageModelParams {
   /**
    * @deprecated Use `maxConcurrency` instead
    */
@@ -38,12 +38,12 @@ export interface BaseLLMParams extends BaseLanguageModelParams {
   cache?: BaseCache | boolean;
 }
 
-export interface BaseLLMCallOptions extends BaseLanguageModelCallOptions {}
+export const base = interface BaseLLMCallOptions extends BaseLanguageModelCallOptions {};
 
 /**
  * LLM Wrapper. Provides an {@link call} (an {@link generate}) function that takes in a prompt (or prompts) and returns a string.
  */
-export abstract class BaseLLM<
+export const base = abstract class BaseLLM<
   CallOptions extends BaseLLMCallOptions = BaseLLMCallOptions
 > extends BaseLanguageModel<string, CallOptions> {
   declare ParsedCallOptions: Omit<
@@ -445,7 +445,7 @@ export abstract class BaseLLM<
     }
     return new Cls(rest);
   }
-}
+};
 
 /**
  * LLM class that provides a simpler interface to subclass than {@link BaseLLM}.
@@ -454,7 +454,7 @@ export abstract class BaseLLM<
  *
  * @augments BaseLLM
  */
-export abstract class LLM<
+export const base = abstract class LLM<
   CallOptions extends BaseLLMCallOptions = BaseLLMCallOptions
 > extends BaseLLM<CallOptions> {
   /**
@@ -480,4 +480,4 @@ export abstract class LLM<
     );
     return { generations };
   }
-}
+};

@@ -13,7 +13,7 @@ import { CallbackManagerForRetrieverRun } from "../callbacks/manager.js";
 /**
  * A string that corresponds to a specific prompt template.
  */
-export type PromptKey =
+export const hyde = type PromptKey =
   | "websearch"
   | "scifact"
   | "arguana"
@@ -28,7 +28,7 @@ export type PromptKey =
  * instance, a VectorStore instance, and an optional promptTemplate which
  * can either be a BasePromptTemplate instance or a PromptKey.
  */
-export type HydeRetrieverOptions<V extends VectorStore> =
+export const hyde = type HydeRetrieverOptions<V extends VectorStore> =
   VectorStoreRetrieverInput<V> & {
     llm: BaseLanguageModel;
     promptTemplate?: BasePromptTemplate | PromptKey;

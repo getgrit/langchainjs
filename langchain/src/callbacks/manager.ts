@@ -32,16 +32,16 @@ type BaseCallbackManagerMethods = {
   ) => Promise<unknown>;
 };
 
-export interface CallbackManagerOptions {
+export const manager = interface CallbackManagerOptions {
   verbose?: boolean;
   tracing?: boolean;
 }
 
-export type Callbacks =
+export const manager = type Callbacks =
   | CallbackManager
   | (BaseCallbackHandler | CallbackHandlerMethods)[];
 
-export interface BaseCallbackConfig {
+export const manager = interface BaseCallbackConfig {
   /**
    * Tags for this call and any sub-calls (eg. a Chain calling an LLM).
    * You can use these to filter calls.
@@ -59,7 +59,7 @@ export interface BaseCallbackConfig {
    * Tags are passed to all callbacks, metadata is passed to handle*Start callbacks.
    */
   callbacks?: Callbacks;
-}
+};
 
 export function parseCallbackConfigArg(
   arg: Callbacks | BaseCallbackConfig | undefined
@@ -76,7 +76,7 @@ export function parseCallbackConfigArg(
 /**
  * Manage callbacks from different components of LangChain.
  */
-export abstract class BaseCallbackManager {
+export const manager = abstract class BaseCallbackManager {
   abstract addHandler(handler: BaseCallbackHandler): void;
 
   abstract removeHandler(handler: BaseCallbackHandler): void;
@@ -86,7 +86,7 @@ export abstract class BaseCallbackManager {
   setHandler(handler: BaseCallbackHandler): void {
     return this.setHandlers([handler]);
   }
-}
+};
 
 /**
  * Base class for run manager in LangChain.

@@ -1,6 +1,6 @@
 import { CheerioWebBaseLoader } from "langchain/document_loaders/web/cheerio";
 
-export const run = async () => {
+export const cheerio_web = const run = async () => {
   const loader = new CheerioWebBaseLoader(
     "https://news.ycombinator.com/item?id=34817881"
   );

@@ -8,7 +8,7 @@ import { CallbackManagerForRetrieverRun } from "../callbacks/manager.js";
  * ContextualCompressionRetriever. It extends the BaseRetrieverInput
  * interface with two additional fields: baseCompressor and baseRetriever.
  */
-export interface ContextualCompressionRetrieverArgs extends BaseRetrieverInput {
+export const contextual_compression = interface ContextualCompressionRetrieverArgs extends BaseRetrieverInput {
   baseCompressor: BaseDocumentCompressor;
   baseRetriever: BaseRetriever;
 }

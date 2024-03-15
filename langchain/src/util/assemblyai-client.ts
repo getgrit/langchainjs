@@ -89,7 +89,7 @@ export class AssemblyAIClient {
     const pollingEndpoint = `${AssemblyAIClient.baseUrl}/transcript/${id}`;
 
     // infinite loop, same as while(true) but linter doesn't like using true constant
-    for (;;) {
+    for () {
       const pollingResponse = await fetch(pollingEndpoint, {
         headers: {
           authorization: this.apiKey,

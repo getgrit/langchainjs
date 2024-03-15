@@ -10,14 +10,14 @@ import { Runnable, RunnableConfig } from "./runnable.js";
 /**
  * Options for formatting instructions.
  */
-export interface FormatInstructionsOptions {}
+export const output_parser = interface FormatInstructionsOptions {};
 
 /**
  * Abstract base class for parsing the output of a Large Language Model
  * (LLM) call. It provides methods for parsing the result of an LLM call
  * and invoking the parser with a given input.
  */
-export abstract class BaseLLMOutputParser<T = unknown> extends Runnable<
+export const output_parser = abstract class BaseLLMOutputParser<T = unknown> extends Runnable<
   string | BaseMessage,
   T
 > {
@@ -80,12 +80,12 @@ export abstract class BaseLLMOutputParser<T = unknown> extends Runnable<
       );
     }
   }
-}
+};
 
 /**
  * Class to parse the output of an LLM call.
  */
-export abstract class BaseOutputParser<
+export const output_parser = abstract class BaseOutputParser<
   T = unknown
 > extends BaseLLMOutputParser<T> {
   parseResult(
@@ -130,12 +130,12 @@ export abstract class BaseOutputParser<
   _type(): string {
     throw new Error("_type not implemented");
   }
-}
+};
 
 /**
  * Class to parse the output of an LLM call that also allows streaming inputs.
  */
-export abstract class BaseTransformOutputParser<
+export const output_parser = abstract class BaseTransformOutputParser<
   T = unknown
 > extends BaseOutputParser<T> {
   async *_transform(
@@ -166,7 +166,7 @@ export abstract class BaseTransformOutputParser<
       runType: "parser",
     });
   }
-}
+};
 
 /**
  * OutputParser that parses LLMResult into the top likely string.

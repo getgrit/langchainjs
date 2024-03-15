@@ -33,7 +33,7 @@ function Imports({ imports }) {
   );
 }
 
-export default function CodeBlockWrapper({ children, ...props }) {
+export function CodeBlockWrapper({ children, ...props }) {
   if (typeof children === "string") {
     return <CodeBlock {...props}>{children}</CodeBlock>;
   }

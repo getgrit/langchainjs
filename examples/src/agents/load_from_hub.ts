@@ -4,7 +4,7 @@ import { loadAgent } from "langchain/agents/load";
 import { SerpAPI } from "langchain/tools";
 import { Calculator } from "langchain/tools/calculator";
 
-export const run = async () => {
+export const load_from_hub = const run = async () => {
   const model = new OpenAI({ temperature: 0 });
   const tools = [
     new SerpAPI(process.env.SERPAPI_API_KEY, {

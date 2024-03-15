@@ -29,7 +29,7 @@ import {
  * Interface defining the structure of arguments used to create a prompt
  * for the ChatConversationalAgent class.
  */
-export interface ChatConversationalCreatePromptArgs {
+export const index = interface ChatConversationalCreatePromptArgs {
   /** String to put after the list of tools. */
   systemMessage?: string;
   /** String to put before the list of tools. */
@@ -45,7 +45,7 @@ export interface ChatConversationalCreatePromptArgs {
  * ChatConversationalAgent class, making the outputParser property
  * optional.
  */
-export type ChatConversationalAgentInput = Optional<AgentInput, "outputParser">;
+export const index = type ChatConversationalAgentInput = Optional<AgentInput, "outputParser">;
 
 /**
  * Agent for the MRKL chain.

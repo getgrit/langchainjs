@@ -16,7 +16,7 @@ import { getEnvironmentVariable } from "../util/env.js";
 /**
  * Interface for the arguments required by the Milvus class constructor.
  */
-export interface MilvusLibArgs {
+export const milvus = interface MilvusLibArgs {
   collectionName?: string;
   primaryField?: string;
   vectorField?: string;

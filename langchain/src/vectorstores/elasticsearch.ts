@@ -29,7 +29,7 @@ interface VectorSearchOptions {
  * Interface defining the arguments required to create an Elasticsearch
  * client.
  */
-export interface ElasticClientArgs {
+export const elasticsearch = interface ElasticClientArgs {
   readonly client: Client;
   readonly indexName?: string;
   readonly vectorSearchOptions?: VectorSearchOptions;

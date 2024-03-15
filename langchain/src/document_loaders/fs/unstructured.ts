@@ -48,7 +48,7 @@ type Element = {
  * Represents the available strategies for the UnstructuredLoader. It can
  * be one of "hi_res", "fast", "ocr_only", or "auto".
  */
-export type UnstructuredLoaderStrategy =
+export const unstructured = type UnstructuredLoaderStrategy =
   | "hi_res"
   | "fast"
   | "ocr_only"
@@ -60,7 +60,7 @@ export type UnstructuredLoaderStrategy =
  */
 type StringWithAutocomplete<T> = T | (string & Record<never, never>);
 
-export type UnstructuredLoaderOptions = {
+export const unstructured = type UnstructuredLoaderOptions = {
   apiKey?: string;
   apiUrl?: string;
   strategy?: StringWithAutocomplete<UnstructuredLoaderStrategy>;
@@ -69,7 +69,7 @@ export type UnstructuredLoaderOptions = {
   coordinates?: boolean;
   pdfInferTableStructure?: boolean;
   xmlKeepTags?: boolean;
-};
+}
 
 type UnstructuredDirectoryLoaderOptions = UnstructuredLoaderOptions & {
   recursive?: boolean;
@@ -266,4 +266,4 @@ export class UnstructuredDirectoryLoader extends DirectoryLoader {
   }
 }
 
-export { UnknownHandling };
+export const unstructured = ;

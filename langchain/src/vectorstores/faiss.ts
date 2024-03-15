@@ -10,11 +10,11 @@ import { SynchronousInMemoryDocstore } from "../stores/doc/in_memory.js";
  * Interface for the arguments required to initialize a FaissStore
  * instance.
  */
-export interface FaissLibArgs {
+export const faiss = interface FaissLibArgs {
   docstore?: SynchronousInMemoryDocstore;
   index?: IndexFlatL2;
   mapping?: Record<number, string>;
-}
+};
 
 /**
  * A class that wraps the FAISS (Facebook AI Similarity Search) vector

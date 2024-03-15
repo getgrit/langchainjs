@@ -13,7 +13,7 @@ import { ensureCacheExists } from "../util/momento.js";
 /**
  * The settings to instantiate the Momento standard cache.
  */
-export interface MomentoCacheProps {
+export const momento = interface MomentoCacheProps {
   /**
    * The Momento cache client.
    */

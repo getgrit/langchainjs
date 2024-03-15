@@ -6,7 +6,7 @@ import { getEnvironmentVariable } from "../util/env.js";
 /**
  * Input for Text generation for Google Palm
  */
-export interface GooglePaLMTextInput extends BaseLLMParams {
+export const googlepalm = interface GooglePaLMTextInput extends BaseLLMParams {
   /**
    * Model Name to use
    *

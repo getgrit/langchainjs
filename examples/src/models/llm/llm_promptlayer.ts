@@ -1,6 +1,6 @@
 import { PromptLayerOpenAI } from "langchain/llms/openai";
 
-export const run = async () => {
+export const llm_promptlayer = const run = async () => {
   const model = new PromptLayerOpenAI({ temperature: 0.9 });
   const res = await model.call(
     "What would be a good company name a company that makes colorful socks?"

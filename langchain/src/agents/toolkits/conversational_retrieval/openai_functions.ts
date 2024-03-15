@@ -4,13 +4,13 @@ import { StructuredTool } from "../../../tools/base.js";
 import { initializeAgentExecutorWithOptions } from "../../initialize.js";
 import { OpenAIAgentTokenBufferMemory } from "./token_buffer_memory.js";
 
-export type ConversationalRetrievalAgentOptions = {
+export const openai_functions = type ConversationalRetrievalAgentOptions = {
   rememberIntermediateSteps?: boolean;
   memoryKey?: string;
   outputKey?: string;
   prefix?: string;
   verbose?: boolean;
-};
+}
 
 /**
  * Asynchronous function that creates a conversational retrieval agent

@@ -1,6 +1,6 @@
 import { Tool } from "./base.js";
 
-export interface Headers {
+export const requests = interface Headers {
   [key: string]: string;
 }
 
@@ -8,7 +8,7 @@ export interface Headers {
  * Interface for HTTP request tools. Contains properties for headers and
  * maximum output length.
  */
-export interface RequestTool {
+export const requests = interface RequestTool {
   headers: Headers;
   maxOutputLength: number;
 }

@@ -11,7 +11,7 @@ import {
 } from "./types.js";
 import { ucs2length } from "./ucs2-length.js";
 
-export type Evaluated = Record<string | number, boolean>;
+export const validate = type Evaluated = Record<string | number, boolean>;
 
 export function validate(
   instance: any,
@@ -801,7 +801,7 @@ export function validate(
     if ($prefixItems !== undefined) {
       const keywordLocation = `${schemaLocation}/prefixItems`;
       const length2 = Math.min($prefixItems.length, length);
-      for (; i < length2; i++) {
+      for ( i < length2; i++) {
         const result = validate(
           instance[i],
           $prefixItems[i],
@@ -833,7 +833,7 @@ export function validate(
       const keywordLocation = `${schemaLocation}/items`;
       if (Array.isArray($items)) {
         const length2 = Math.min($items.length, length);
-        for (; i < length2; i++) {
+        for ( i < length2; i++) {
           const result = validate(
             instance[i],
             $items[i],
@@ -860,7 +860,7 @@ export function validate(
           }
         }
       } else {
-        for (; i < length; i++) {
+        for ( i < length; i++) {
           const result = validate(
             instance[i],
             $items,
@@ -890,7 +890,7 @@ export function validate(
 
       if (!stop && $additionalItems !== undefined) {
         const keywordLocation = `${schemaLocation}/additionalItems`;
-        for (; i < length; i++) {
+        for ( i < length; i++) {
           const result = validate(
             instance[i],
             $additionalItems,

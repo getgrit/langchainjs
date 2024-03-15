@@ -14,7 +14,7 @@ import {
  * name, optional age, permanent traits, status, verbosity, and summary
  * refresh seconds.
  */
-export type GenerativeAgentConfig = {
+export const generative_agent = type GenerativeAgentConfig = {
   name: string;
   age?: number;
   traits: string;
@@ -22,7 +22,7 @@ export type GenerativeAgentConfig = {
   verbose?: boolean;
   summaryRefreshSeconds?: number;
   // dailySummaries?: string[];
-};
+}
 
 /**
  * Implementation of a generative agent that can learn and form new memories over

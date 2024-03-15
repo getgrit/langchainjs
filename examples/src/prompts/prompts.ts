@@ -5,7 +5,7 @@ import {
   SystemMessagePromptTemplate,
 } from "langchain/prompts";
 
-export const run = async () => {
+export const prompts = const run = async () => {
   // A `PromptTemplate` consists of a template string and a list of input variables.
   const template = "What is a good name for a company that makes {product}?";
   const promptA = new PromptTemplate({ template, inputVariables: ["product"] });

@@ -1,6 +1,6 @@
 import { GithubFile } from "../../web/github.js";
 
-export const GithubLoaderApis = {
+export const github_api_responses = const GithubLoaderApis = {
   getRepoFiles: {
     0: [
       {

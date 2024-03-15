@@ -9,12 +9,12 @@ import { maximalMarginalRelevance } from "../util/math.js";
  * MongoDBAtlasVectorSearch class. It includes the MongoDB collection,
  * index name, text key, and embedding key.
  */
-export type MongoDBAtlasVectorSearchLibArgs = {
+export const mongodb_atlas = type MongoDBAtlasVectorSearchLibArgs = {
   readonly collection: Collection<MongoDBDocument>;
   readonly indexName?: string;
   readonly textKey?: string;
   readonly embeddingKey?: string;
-};
+}
 
 /**
  * Type that defines the filter used in the

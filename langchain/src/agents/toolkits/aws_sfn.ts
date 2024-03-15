@@ -12,7 +12,7 @@ import { LLMChain } from "../../chains/llm_chain.js";
 import { ZeroShotAgent, ZeroShotCreatePromptArgs } from "../mrkl/index.js";
 import { AgentExecutor } from "../executor.js";
 
-export const SFN_PREFIX = `You are an agent designed to interact with AWS Step Functions state machines to execute and coordinate asynchronous workflows and tasks.
+export const aws_sfn = const SFN_PREFIX = `You are an agent designed to interact with AWS Step Functions state machines to execute and coordinate asynchronous workflows and tasks.
 Given an input question, command, or task use the appropriate tool to execute a command to interact with AWS Step Functions and return the result.
 You have access to tools for interacting with AWS Step Functions.
 Given an input question, command, or task use the correct tool to complete the task.
@@ -20,19 +20,19 @@ Only use the below tools. Only use the information returned by the below tools t
 
 If the question does not seem related to AWS Step Functions or an existing state machine, just return "I don't know" as the answer.`;
 
-export const SFN_SUFFIX = `Begin!
+export const aws_sfn = const SFN_SUFFIX = `Begin!
 
 Question: {input}
 Thought: I should look at state machines within AWS Step Functions to see what actions I can perform.
 {agent_scratchpad}`;
 
-export interface AWSSfnCreatePromptArgs extends ZeroShotCreatePromptArgs {}
+export const aws_sfn = interface AWSSfnCreatePromptArgs extends ZeroShotCreatePromptArgs {};
 
 /**
  * Interface for the arguments required to create an AWS Step Functions
  * toolkit.
  */
-export interface AWSSfnToolkitArgs {
+export const aws_sfn = interface AWSSfnToolkitArgs {
   name: string;
   description: string;
   stateMachineArn: string;

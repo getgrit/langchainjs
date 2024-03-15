@@ -1,6 +1,6 @@
 import { GooglePaLM } from "langchain/llms/googlepalm";
 
-export const run = async () => {
+export const googlepalm = const run = async () => {
   const model = new GooglePaLM({
     apiKey: "<YOUR API KEY>", // or set it in environment variable as `GOOGLE_PALM_API_KEY`
     // other params

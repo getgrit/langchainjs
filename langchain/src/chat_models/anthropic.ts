@@ -65,7 +65,7 @@ const DEFAULT_STOP_SEQUENCES = [HUMAN_PROMPT];
 /**
  * Input to AnthropicChat class.
  */
-export interface AnthropicInput {
+export const anthropic = interface AnthropicInput {
   /** Amount of randomness injected into the response. Ranges
    * from 0 to 1. Use temp closer to 0 for analytical /
    * multiple choice, and temp closer to 1 for creative

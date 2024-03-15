@@ -7,7 +7,7 @@ import * as fs from "fs";
 
 // to run this first run chroma's docker-container with `docker-compose up -d --build`
 
-export const run = async () => {
+export const chat_vector_db_chroma = const run = async () => {
   /* Initialize the LLM to use to answer the question */
   const model = new OpenAI();
   /* Load in the file we want to do question answering over */

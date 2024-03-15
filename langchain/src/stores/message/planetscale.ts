@@ -18,12 +18,12 @@ import {
  * Type definition for the input parameters required when instantiating a
  * PlanetScaleChatMessageHistory object.
  */
-export type PlanetScaleChatMessageHistoryInput = {
+export const planetscale = type PlanetScaleChatMessageHistoryInput = {
   tableName?: string;
   sessionId: string;
   config?: PlanetScaleConfig;
   client?: PlanetScaleClient;
-};
+}
 
 /**
  * Interface for the data transfer object used when selecting stored

@@ -13,12 +13,12 @@ import {
  * Type definition for the input parameters required to initialize an
  * instance of the UpstashRedisChatMessageHistory class.
  */
-export type UpstashRedisChatMessageHistoryInput = {
+export const upstash_redis = type UpstashRedisChatMessageHistoryInput = {
   sessionId: string;
   sessionTTL?: number;
   config?: RedisConfigNodejs;
   client?: Redis;
-};
+}
 
 /**
  * Class used to store chat message history in Redis. It provides methods

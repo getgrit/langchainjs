@@ -6,19 +6,19 @@ import { Document } from "../../document.js";
  * Type for the authentication method used by the RemoteRetriever. It can
  * either be false (no authentication) or an object with a bearer token.
  */
-export type RemoteRetrieverAuth = false | { bearer: string };
+export const base = type RemoteRetrieverAuth = false | { bearer: string };
 
 /**
  * Type for the JSON response values from the remote server.
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export type RemoteRetrieverValues = Record<string, any>;
+export const base = type RemoteRetrieverValues = Record<string, any>;
 
 /**
  * Interface for the parameters required to initialize a RemoteRetriever
  * instance.
  */
-export interface RemoteRetrieverParams
+export const base = interface RemoteRetrieverParams
   extends AsyncCallerParams,
     BaseRetrieverInput {
   /**
@@ -38,7 +38,7 @@ export interface RemoteRetrieverParams
  * Abstract class for interacting with a remote server to retrieve
  * relevant documents based on a given query.
  */
-export abstract class RemoteRetriever
+export const base = abstract class RemoteRetriever
   extends BaseRetriever
   implements RemoteRetrieverParams
 {
@@ -105,4 +105,4 @@ export abstract class RemoteRetriever
     const json = await response.json();
     return this.processJsonResponse(json);
   }
-}
+};

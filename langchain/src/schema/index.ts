@@ -2,14 +2,14 @@ import { ChatCompletionRequestMessageFunctionCall } from "openai";
 import { Document } from "../document.js";
 import { Serializable, SerializedConstructor } from "../load/serializable.js";
 
-export const RUN_KEY = "__run";
+export const index = const RUN_KEY = "__run";
 
-export type Example = Record<string, string>;
+export const index = type Example = Record<string, string>;
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export type InputValues<K extends string = string> = Record<K, any>;
+export const index = type InputValues<K extends string = string> = Record<K, any>;
 
-export type PartialValues<K extends string = string> = Record<
+export const index = type PartialValues<K extends string = string> = Record<
   K,
   string | (() => Promise<string>) | (() => string)
 >;
@@ -17,7 +17,7 @@ export type PartialValues<K extends string = string> = Record<
 /**
  * Output of a single generation.
  */
-export interface Generation {
+export const index = interface Generation {
   /**
    * Generated text output
    */
@@ -28,9 +28,9 @@ export interface Generation {
    */
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   generationInfo?: Record<string, any>;
-}
+};
 
-export type GenerationChunkFields = {
+export const index = type GenerationChunkFields = {
   text: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   generationInfo?: Record<string, any>;
@@ -64,7 +64,7 @@ export class GenerationChunk implements Generation {
 /**
  * Contains all relevant information returned by an LLM.
  */
-export type LLMResult = {
+export const index = type LLMResult = {
   /**
    * List of the things generated. Each input could have multiple {@link Generation | generations}, hence this is a list of lists.
    */
@@ -79,46 +79,46 @@ export type LLMResult = {
    */
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [RUN_KEY]?: Record<string, any>;
-};
+};;
 
-export interface StoredMessageData {
+export const index = interface StoredMessageData {
   content: string;
   role: string | undefined;
   name: string | undefined;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   additional_kwargs?: Record<string, any>;
-}
+};
 
-export interface StoredMessage {
+export const index = interface StoredMessage {
   type: string;
   data: StoredMessageData;
-}
+};
 
-export type MessageType = "human" | "ai" | "generic" | "system" | "function";
+export const index = type MessageType = "human" | "ai" | "generic" | "system" | "function";;
 
-export interface BaseMessageFields {
+export const index = interface BaseMessageFields {
   content: string;
   name?: string;
   additional_kwargs?: {
     function_call?: ChatCompletionRequestMessageFunctionCall;
     [key: string]: unknown;
   };
-}
+};
 
-export interface ChatMessageFieldsWithRole extends BaseMessageFields {
+export const index = interface ChatMessageFieldsWithRole extends BaseMessageFields {
   role: string;
-}
+};
 
-export interface FunctionMessageFieldsWithName extends BaseMessageFields {
+export const index = interface FunctionMessageFieldsWithName extends BaseMessageFields {
   name: string;
-}
+};
 
 /**
  * Base class for all types of messages in a conversation. It includes
  * properties like `content`, `name`, and `additional_kwargs`. It also
  * includes methods like `toDict()` and `_getType()`.
  */
-export abstract class BaseMessage
+export const index = abstract class BaseMessage
   extends Serializable
   implements BaseMessageFields
 {
@@ -173,7 +173,7 @@ export abstract class BaseMessage
         .kwargs as StoredMessageData,
     };
   }
-}
+};
 
 /**
  * Represents a chunk of a message, which can be concatenated with other
@@ -182,7 +182,7 @@ export abstract class BaseMessage
  * one. It also overrides the `__add__()` method to support concatenation
  * of `BaseMessageChunk` instances.
  */
-export abstract class BaseMessageChunk extends BaseMessage {
+export const index = abstract class BaseMessageChunk extends BaseMessage {
   abstract concat(chunk: BaseMessageChunk): BaseMessageChunk;
 
   static _mergeAdditionalKwargs(
@@ -215,7 +215,7 @@ export abstract class BaseMessageChunk extends BaseMessage {
     }
     return merged;
   }
-}
+};
 
 /**
  * Represents a human message in a conversation.
@@ -332,25 +332,25 @@ export class SystemMessageChunk extends BaseMessageChunk {
  * @deprecated
  * Use {@link BaseMessage} instead.
  */
-export const BaseChatMessage = BaseMessage;
+export const index = const BaseChatMessage = BaseMessage;
 
 /**
  * @deprecated
  * Use {@link HumanMessage} instead.
  */
-export const HumanChatMessage = HumanMessage;
+export const index = const HumanChatMessage = HumanMessage;
 
 /**
  * @deprecated
  * Use {@link AIMessage} instead.
  */
-export const AIChatMessage = AIMessage;
+export const index = const AIChatMessage = AIMessage;
 
 /**
  * @deprecated
  * Use {@link SystemMessage} instead.
  */
-export const SystemChatMessage = SystemMessage;
+export const index = const SystemChatMessage = SystemMessage;
 
 /**
  * Represents a function message in a conversation.
@@ -485,11 +485,11 @@ export class ChatMessageChunk extends BaseMessageChunk {
   }
 }
 
-export interface ChatGeneration extends Generation {
+export const index = interface ChatGeneration extends Generation {
   message: BaseMessage;
-}
+};
 
-export type ChatGenerationChunkFields = GenerationChunkFields & {
+export const index = type ChatGenerationChunkFields = GenerationChunkFields & {
   message: BaseMessageChunk;
 };
 
@@ -516,47 +516,47 @@ export class ChatGenerationChunk
   }
 }
 
-export interface ChatResult {
+export const index = interface ChatResult {
   generations: ChatGeneration[];
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   llmOutput?: Record<string, any>;
-}
+};
 
 /**
  * Base PromptValue class. All prompt values should extend this class.
  */
-export abstract class BasePromptValue extends Serializable {
+export const index = abstract class BasePromptValue extends Serializable {
   abstract toString(): string;
 
   abstract toChatMessages(): BaseMessage[];
-}
+};
 
-export type AgentAction = {
+export const index = type AgentAction = {
   tool: string;
   toolInput: string;
   log: string;
-};
+};;
 
-export type AgentFinish = {
+export const index = type AgentFinish = {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   returnValues: Record<string, any>;
   log: string;
-};
+};;
 
-export type AgentStep = {
+export const index = type AgentStep = {
   action: AgentAction;
   observation: string;
-};
+};;
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export type ChainValues = Record<string, any>;
+export const index = type ChainValues = Record<string, any>;;
 
 /**
  * Base class for all chat message histories. All chat message histories
  * should extend this class.
  */
-export abstract class BaseChatMessageHistory extends Serializable {
+export const index = abstract class BaseChatMessageHistory extends Serializable {
   public abstract getMessages(): Promise<BaseMessage[]>;
 
   public abstract addMessage(message: BaseMessage): Promise<void>;
@@ -566,13 +566,13 @@ export abstract class BaseChatMessageHistory extends Serializable {
   public abstract addAIChatMessage(message: string): Promise<void>;
 
   public abstract clear(): Promise<void>;
-}
+};
 
 /**
  * Base class for all list chat message histories. All list chat message
  * histories should extend this class.
  */
-export abstract class BaseListChatMessageHistory extends Serializable {
+export const index = abstract class BaseListChatMessageHistory extends Serializable {
   public abstract addMessage(message: BaseMessage): Promise<void>;
 
   public addUserMessage(message: string): Promise<void> {
@@ -582,32 +582,32 @@ export abstract class BaseListChatMessageHistory extends Serializable {
   public addAIChatMessage(message: string): Promise<void> {
     return this.addMessage(new AIMessage(message));
   }
-}
+};
 
 /**
  * Base class for all caches. All caches should extend this class.
  */
-export abstract class BaseCache<T = Generation[]> {
+export const index = abstract class BaseCache<T = Generation[]> {
   abstract lookup(prompt: string, llmKey: string): Promise<T | null>;
 
   abstract update(prompt: string, llmKey: string, value: T): Promise<void>;
-}
+};
 
 /**
  * Base class for all file stores. All file stores should extend this
  * class.
  */
-export abstract class BaseFileStore extends Serializable {
+export const index = abstract class BaseFileStore extends Serializable {
   abstract readFile(path: string): Promise<string>;
 
   abstract writeFile(path: string, contents: string): Promise<void>;
-}
+};
 
 /**
  * Base class for all entity stores. All entity stores should extend this
  * class.
  */
-export abstract class BaseEntityStore extends Serializable {
+export const index = abstract class BaseEntityStore extends Serializable {
   abstract get(key: string, defaultValue?: string): Promise<string | undefined>;
 
   abstract set(key: string, value?: string): Promise<void>;
@@ -617,14 +617,14 @@ export abstract class BaseEntityStore extends Serializable {
   abstract exists(key: string): Promise<boolean>;
 
   abstract clear(): Promise<void>;
-}
+};
 
 /**
  * Abstract class for a document store. All document stores should extend
  * this class.
  */
-export abstract class Docstore {
+export const index = abstract class Docstore {
   abstract search(search: string): Promise<Document>;
 
   abstract add(texts: Record<string, Document>): Promise<void>;
-}
+};

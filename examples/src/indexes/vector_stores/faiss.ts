@@ -1,7 +1,7 @@
 import { FaissStore } from "langchain/vectorstores/faiss";
 import { OpenAIEmbeddings } from "langchain/embeddings/openai";
 
-export const run = async () => {
+export const faiss = const run = async () => {
   const vectorStore = await FaissStore.fromTexts(
     ["Hello world", "Bye bye", "hello nice world"],
     [{ id: 2 }, { id: 1 }, { id: 3 }],

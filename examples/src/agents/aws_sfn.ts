@@ -22,7 +22,7 @@ const _EXAMPLE_STATE_MACHINE_ASL = `
  * You can test by provisioning a state machine using the above ASL within your AWS environment, or you can use a tool like LocalStack
  * to mock AWS services locally. See https://localstack.cloud/ for more information.
  */
-export const run = async () => {
+export const aws_sfn = const run = async () => {
   const model = new OpenAI({ temperature: 0 });
   const toolkit = new AWSSfnToolkit({
     name: "onboard-new-client-workflow",

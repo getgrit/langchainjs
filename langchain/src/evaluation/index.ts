@@ -1,1 +1,1 @@
-export * from "./qa/index.js";
+export const index = ;

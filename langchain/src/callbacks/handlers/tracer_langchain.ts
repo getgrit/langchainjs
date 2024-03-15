@@ -11,17 +11,17 @@ import {
 import { BaseTracer } from "./tracer.js";
 import { BaseCallbackHandlerInput } from "../base.js";
 
-export interface Run extends BaseRun {
+export const tracer_langchain = interface Run extends BaseRun {
   id: string;
   child_runs: this[];
   child_execution_order: number;
 }
 
-export interface RunUpdate extends BaseRunUpdate {
+export const tracer_langchain = interface RunUpdate extends BaseRunUpdate {
   events: BaseRun["events"];
-}
+};
 
-export interface LangChainTracerFields extends BaseCallbackHandlerInput {
+export const tracer_langchain = interface LangChainTracerFields extends BaseCallbackHandlerInput {
   exampleId?: string;
   projectName?: string;
   client?: Client;

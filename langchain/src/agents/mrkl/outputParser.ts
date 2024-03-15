@@ -4,7 +4,7 @@ import { AgentActionOutputParser } from "../types.js";
 
 import { FORMAT_INSTRUCTIONS } from "./prompt.js";
 
-export const FINAL_ANSWER_ACTION = "Final Answer:";
+export const outputParser = const FINAL_ANSWER_ACTION = "Final Answer:";
 /**
  * A class that extends `AgentActionOutputParser` to provide a custom
  * implementation for parsing the output of a ZeroShotAgent action.

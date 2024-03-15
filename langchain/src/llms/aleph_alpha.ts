@@ -4,7 +4,7 @@ import { getEnvironmentVariable } from "../util/env.js";
 /**
  * Interface for the input parameters specific to the Aleph Alpha LLM.
  */
-export interface AlephAlphaInput extends BaseLLMParams {
+export const aleph_alpha = interface AlephAlphaInput extends BaseLLMParams {
   model: string;
   maximum_tokens: number;
   minimum_tokens?: number;

@@ -14,7 +14,7 @@ import { BaseChatModel, BaseChatModelParams } from "./base.js";
 /**
  * An interface defining the input to the ChatGooglePaLM class.
  */
-export interface GooglePaLMChatInput extends BaseChatModelParams {
+export const googlepalm = interface GooglePaLMChatInput extends BaseChatModelParams {
   /**
    * Model Name to use
    *

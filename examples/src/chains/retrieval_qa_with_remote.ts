@@ -2,7 +2,7 @@ import { OpenAI } from "langchain/llms/openai";
 import { RetrievalQAChain } from "langchain/chains";
 import { RemoteLangChainRetriever } from "langchain/retrievers/remote";
 
-export const run = async () => {
+export const retrieval_qa_with_remote = const run = async () => {
   // Initialize the LLM to use to answer the question.
   const model = new OpenAI({});
 

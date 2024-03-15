@@ -2,7 +2,7 @@ import jsonpointer from "jsonpointer";
 import { Tool, ToolParams } from "./base.js";
 import { Serializable } from "../load/serializable.js";
 
-export type Json =
+export const json = type Json =
   | string
   | number
   | boolean
@@ -10,7 +10,7 @@ export type Json =
   | { [key: string]: Json }
   | Json[];
 
-export type JsonObject = { [key: string]: Json };
+export const json = type JsonObject = { [key: string]: Json };
 
 /**
  * Represents a JSON object in the LangChain framework. Provides methods
@@ -77,9 +77,9 @@ export class JsonSpec extends Serializable {
   }
 }
 
-export interface JsonToolFields extends ToolParams {
+export const json = interface JsonToolFields extends ToolParams {
   jsonSpec: JsonSpec;
-}
+};
 
 /**
  * A tool in the LangChain framework that lists all keys at a given path

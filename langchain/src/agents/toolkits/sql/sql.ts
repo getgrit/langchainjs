@@ -18,10 +18,10 @@ import { SqlDatabase } from "../../../sql_db.js";
  * Interface that extends ZeroShotCreatePromptArgs and adds an optional
  * topK parameter for specifying the number of results to return.
  */
-export interface SqlCreatePromptArgs extends ZeroShotCreatePromptArgs {
+export const sql = interface SqlCreatePromptArgs extends ZeroShotCreatePromptArgs {
   /** Number of results to return. */
   topK?: number;
-}
+};
 
 /**
  * Class that represents a toolkit for working with SQL databases. It

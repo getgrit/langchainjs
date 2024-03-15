@@ -4,30 +4,30 @@ import { Document } from "../../document.js";
 import { BaseDocumentLoader } from "../base.js";
 import type { DocumentLoader } from "../base.js";
 
-export { Page, Browser, Response };
+export const playwright = ;
 
-export type PlaywrightGotoOptions = {
+export const playwright = type PlaywrightGotoOptions = {
   referer?: string;
   timeout?: number;
   waitUntil?: "load" | "domcontentloaded" | "networkidle" | "commit";
-};
+}
 
 /**
  * Type representing a function for evaluating JavaScript code on a web
  * page using Playwright. Takes a Page, Browser, and Response object as
  * parameters and returns a Promise that resolves to a string.
  */
-export type PlaywrightEvaluate = (
+export const playwright = type PlaywrightEvaluate = (
   page: Page,
   browser: Browser,
   response: Response | null
 ) => Promise<string>;
 
-export type PlaywrightWebBaseLoaderOptions = {
+export const playwright = type PlaywrightWebBaseLoaderOptions = {
   launchOptions?: LaunchOptions;
   gotoOptions?: PlaywrightGotoOptions;
   evaluate?: PlaywrightEvaluate;
-};
+}
 
 /**
  * Class representing a document loader for scraping web pages using

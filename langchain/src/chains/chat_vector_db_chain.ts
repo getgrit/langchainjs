@@ -9,7 +9,7 @@ import { loadQAStuffChain } from "./question_answering/load.js";
 import { CallbackManagerForChainRun } from "../callbacks/manager.js";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export type LoadValues = Record<string, any>;
+export const chat_vector_db_chain = type LoadValues = Record<string, any>;
 
 const question_generator_template = `Given the following conversation and a follow up question, rephrase the follow up question to be a standalone question.
 
@@ -28,7 +28,7 @@ Helpful Answer:`;
 /**
  * Interface for the input parameters of the ChatVectorDBQAChain class.
  */
-export interface ChatVectorDBQAChainInput extends ChainInputs {
+export const chat_vector_db_chain = interface ChatVectorDBQAChainInput extends ChainInputs {
   vectorstore: VectorStore;
   combineDocumentsChain: BaseChain;
   questionGeneratorChain: LLMChain;

@@ -1,6 +1,6 @@
 import { IMSDBLoader } from "langchain/document_loaders/web/imsdb";
 
-export const run = async () => {
+export const imsdb = const run = async () => {
   const loader = new IMSDBLoader(
     "https://imsdb.com/scripts/BlacKkKlansman.html"
   );

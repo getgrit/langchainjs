@@ -5,7 +5,7 @@ import {
 } from "langchain/memory";
 import { LLMChain } from "langchain/chains";
 
-export const run = async () => {
+export const entity = const run = async () => {
   const memory = new EntityMemory({
     llm: new OpenAI({ temperature: 0 }),
     chatHistoryKey: "history", // Default value

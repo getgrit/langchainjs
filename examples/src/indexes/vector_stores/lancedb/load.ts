@@ -9,7 +9,7 @@ import os from "node:os";
 //  You can open a LanceDB dataset created elsewhere, such as LangChain Python, by opening
 //     an existing table
 //
-export const run = async () => {
+export const load = const run = async () => {
   const uri = await createdTestDb();
   const db = await connect(uri);
   const table = await db.openTable("vectors");

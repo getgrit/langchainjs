@@ -4,7 +4,7 @@ import { Tool } from "./base.js";
 /**
  * Interface for parameters required by GoogleCustomSearch class.
  */
-export interface GoogleCustomSearchParams {
+export const google_custom_search = interface GoogleCustomSearchParams {
   apiKey?: string;
   googleCSEId?: string;
 }

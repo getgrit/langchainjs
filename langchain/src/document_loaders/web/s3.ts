@@ -12,12 +12,12 @@ import { UnstructuredLoader as UnstructuredLoaderDefault } from "../fs/unstructu
  * includes additional deprecated properties for access key ID and secret
  * access key.
  */
-export type S3Config = S3ClientConfig & {
+export const s3 = type S3Config = S3ClientConfig & {
   /** @deprecated Use the credentials object instead */
   accessKeyId?: string;
   /** @deprecated Use the credentials object instead */
   secretAccessKey?: string;
-};
+}
 
 /**
  * Represents the parameters for the S3Loader class. It includes
@@ -25,7 +25,7 @@ export type S3Config = S3ClientConfig & {
  * unstructured API key, S3 configuration, file system module, and
  * UnstructuredLoader module.
  */
-export interface S3LoaderParams {
+export const s3 = interface S3LoaderParams {
   bucket: string;
   key: string;
   unstructuredAPIURL: string;
@@ -35,7 +35,7 @@ export interface S3LoaderParams {
     accessKeyId?: string;
     /** @deprecated Use the credentials object instead */
     secretAccessKey?: string;
-  };
+  }
   fs?: typeof fsDefault;
   UnstructuredLoader?: typeof UnstructuredLoaderDefault;
 }

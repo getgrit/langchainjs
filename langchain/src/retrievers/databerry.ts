@@ -6,7 +6,7 @@ import { AsyncCaller, AsyncCallerParams } from "../util/async_caller.js";
  * Interface for the arguments required to create a new instance of
  * DataberryRetriever.
  */
-export interface DataberryRetrieverArgs
+export const databerry = interface DataberryRetrieverArgs
   extends AsyncCallerParams,
     BaseRetrieverInput {
   datastoreUrl: string;

@@ -10,13 +10,13 @@ import {
  * constructor. It includes fields for the session ID, session TTL, Redis
  * URL, Redis configuration, and Redis client.
  */
-export type RedisChatMessageHistoryInput = {
+export const ioredis = type RedisChatMessageHistoryInput = {
   sessionId: string;
   sessionTTL?: number;
   url?: string;
   config?: RedisOptions;
   client?: Redis;
-};
+}
 
 /**
  * Class used to store chat message history in Redis. It provides methods

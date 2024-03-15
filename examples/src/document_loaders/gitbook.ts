@@ -1,6 +1,6 @@
 import { GitbookLoader } from "langchain/document_loaders/web/gitbook";
 
-export const run = async () => {
+export const gitbook = const run = async () => {
   const loader = new GitbookLoader("https://docs.gitbook.com");
   const docs = await loader.load(); // load single path
   console.log(docs);

@@ -4,19 +4,19 @@ import { getEnvironmentVariable } from "../util/env.js";
 /**
  * Type definition for AI21 penalty data.
  */
-export type AI21PenaltyData = {
+export const ai21 = type AI21PenaltyData = {
   scale: number;
   applyToWhitespaces: boolean;
   applyToPunctuations: boolean;
   applyToNumbers: boolean;
   applyToStopwords: boolean;
   applyToEmojis: boolean;
-};
+}
 
 /**
  * Interface for AI21 input parameters.
  */
-export interface AI21Input extends BaseLLMParams {
+export const ai21 = interface AI21Input extends BaseLLMParams {
   ai21ApiKey?: string;
   model?: string;
   temperature?: number;

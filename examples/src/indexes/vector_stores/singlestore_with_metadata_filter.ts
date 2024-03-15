@@ -1,7 +1,7 @@
 import { SingleStoreVectorStore } from "langchain/vectorstores/singlestore";
 import { OpenAIEmbeddings } from "langchain/embeddings/openai";
 
-export const run = async () => {
+export const singlestore_with_metadata_filter = const run = async () => {
   const vectorStore = await SingleStoreVectorStore.fromTexts(
     ["Good afternoon", "Bye bye", "Boa tarde!", "Até logo!"],
     [

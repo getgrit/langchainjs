@@ -7,7 +7,7 @@ import { BaseDocumentLoader } from "../base.js";
  * See https://docs.sort.xyz/reference for more information about Sort's REST API.
  */
 
-export interface Query {
+export const sort_xyz_blockchain = interface Query {
   type: "NFTMetadata" | "latestTransactions";
   contractAddress: string;
   blockchain: "ethereum" | "polygon" | "goerli";
@@ -18,7 +18,7 @@ export interface Query {
  * Interface representing the parameters for the SortXYZBlockchainLoader
  * class.
  */
-export interface SortXYZBlockchainLoaderParams {
+export const sort_xyz_blockchain = interface SortXYZBlockchainLoaderParams {
   apiKey: string;
   query: Query | string;
 }
@@ -26,7 +26,7 @@ export interface SortXYZBlockchainLoaderParams {
 /**
  * Interface representing the response from the SortXYZ API.
  */
-export interface SortXYZBlockchainAPIResponse {
+export const sort_xyz_blockchain = interface SortXYZBlockchainAPIResponse {
   code: number;
   data: {
     durationMs: number;
@@ -34,7 +34,7 @@ export interface SortXYZBlockchainAPIResponse {
     query: string;
     records: Record<string, unknown>[];
     recordCount: number;
-  };
+  }
 }
 
 /**

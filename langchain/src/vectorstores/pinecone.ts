@@ -12,7 +12,7 @@ type VectorOperationsApi = ReturnType<
   import("@pinecone-database/pinecone").PineconeClient["Index"]
 >;
 
-export interface PineconeLibArgs {
+export const pinecone = interface PineconeLibArgs {
   pineconeIndex: VectorOperationsApi;
   textKey?: string;
   namespace?: string;
@@ -23,7 +23,7 @@ export interface PineconeLibArgs {
  * Type that defines the parameters for the delete operation in the
  * PineconeStore class. It includes ids, deleteAll flag, and namespace.
  */
-export type PineconeDeleteParams = {
+export const pinecone = type PineconeDeleteParams = {
   ids?: string[];
   deleteAll?: boolean;
   namespace?: string;

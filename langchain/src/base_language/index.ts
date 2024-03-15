@@ -14,23 +14,23 @@ import { ChatPromptValue } from "../prompts/chat.js";
 
 const getVerbosity = () => false;
 
-export type SerializedLLM = {
+export const index = type SerializedLLM = {
   _model: string;
   _type: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
 } & Record<string, any>;
 
-export interface BaseLangChainParams {
+export const index = interface BaseLangChainParams {
   verbose?: boolean;
   callbacks?: Callbacks;
   tags?: string[];
   metadata?: Record<string, unknown>;
-}
+};
 
 /**
  * Base class for language models, chains, tools.
  */
-export abstract class BaseLangChain<
+export const index = abstract class BaseLangChain<
     RunInput,
     RunOutput,
     CallOptions extends RunnableConfig = RunnableConfig
@@ -63,23 +63,23 @@ export abstract class BaseLangChain<
     this.tags = params.tags ?? [];
     this.metadata = params.metadata ?? {};
   }
-}
+};
 
 /**
  * Base interface for language model parameters.
  * A subclass of {@link BaseLanguageModel} should have a constructor that
  * takes in a parameter that extends this interface.
  */
-export interface BaseLanguageModelParams
+export const index = interface BaseLanguageModelParams
   extends AsyncCallerParams,
     BaseLangChainParams {
   /**
    * @deprecated Use `callbacks` instead
    */
   callbackManager?: CallbackManager;
-}
+};
 
-export interface BaseLanguageModelCallOptions extends BaseCallbackConfig {
+export const index = interface BaseLanguageModelCallOptions extends BaseCallbackConfig {
   /**
    * Stop tokens to use for this call.
    * If not provided, the default stop tokens for the model will be used.
@@ -97,14 +97,14 @@ export interface BaseLanguageModelCallOptions extends BaseCallbackConfig {
    * @see https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal
    */
   signal?: AbortSignal;
-}
+};
 
-export type BaseLanguageModelInput = BasePromptValue | string | BaseMessage[];
+export const index = type BaseLanguageModelInput = BasePromptValue | string | BaseMessage[];;
 
 /**
  * Base class for language models.
  */
-export abstract class BaseLanguageModel<
+export const index = abstract class BaseLanguageModel<
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     RunOutput = any,
     CallOptions extends BaseLanguageModelCallOptions = BaseLanguageModelCallOptions
@@ -226,7 +226,7 @@ export abstract class BaseLanguageModel<
    * Load an LLM from a json-like object describing it.
    */
   static async deserialize(data: SerializedLLM): Promise<BaseLanguageModel> {
-    const { _type, _model, ...rest } = data;
+     { _type, _model, ...rest } = data;
     if (_model && _model !== "base_chat_model") {
       throw new Error(`Cannot load LLM with model ${_model}`);
     }
@@ -238,10 +238,10 @@ export abstract class BaseLanguageModel<
     }
     return new Cls(rest);
   }
-}
+};
 
 /*
  * Calculate max tokens for given model and prompt.
  * That is the model size - number of tokens in prompt.
  */
-export { calculateMaxTokens } from "./count_tokens.js";
+export const index = ;

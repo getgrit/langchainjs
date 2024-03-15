@@ -22,7 +22,7 @@ import { FORMAT_INSTRUCTIONS, PREFIX, SUFFIX } from "./prompt.js";
  * Interface for arguments used to create a prompt for a
  * StructuredChatAgent.
  */
-export interface StructuredChatCreatePromptArgs {
+export const index = interface StructuredChatCreatePromptArgs {
   /** String to put after the list of tools. */
   suffix?: string;
   /** String to put before the list of tools. */
@@ -37,7 +37,7 @@ export interface StructuredChatCreatePromptArgs {
  * Type for input data for creating a StructuredChatAgent, with the
  * 'outputParser' property made optional.
  */
-export type StructuredChatAgentInput = Optional<AgentInput, "outputParser">;
+export const index = type StructuredChatAgentInput = Optional<AgentInput, "outputParser">;
 
 /**
  * Agent that interoperates with Structured Tools using React logic.

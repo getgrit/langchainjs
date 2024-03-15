@@ -13,16 +13,16 @@ import { Embeddings } from "../embeddings/base.js";
 import { Document } from "../document.js";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export type Metadata = Record<string, any>;
+export const singlestore = type Metadata = Record<string, any>;
 
-export type DistanceMetrics = "DOT_PRODUCT" | "EUCLIDEAN_DISTANCE";
+export const singlestore = type DistanceMetrics = "DOT_PRODUCT" | "EUCLIDEAN_DISTANCE";
 
 const OrderingDirective: Record<DistanceMetrics, string> = {
   DOT_PRODUCT: "DESC",
   EUCLIDEAN_DISTANCE: "",
 };
 
-export interface ConnectionOptions extends PoolOptions {}
+export const singlestore = interface ConnectionOptions extends PoolOptions {};
 
 type ConnectionWithUri = {
   connectionOptions?: never;
@@ -36,13 +36,13 @@ type ConnectionWithOptions = {
 
 type ConnectionConfig = ConnectionWithUri | ConnectionWithOptions;
 
-export type SingleStoreVectorStoreConfig = ConnectionConfig & {
+export const singlestore = type SingleStoreVectorStoreConfig = ConnectionConfig & {
   tableName?: string;
   contentColumnName?: string;
   vectorColumnName?: string;
   metadataColumnName?: string;
   distanceMetric?: DistanceMetrics;
-};
+}
 
 function withConnectAttributes(
   config: SingleStoreVectorStoreConfig

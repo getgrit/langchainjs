@@ -1,6 +1,6 @@
 import { GithubRepoLoader } from "langchain/document_loaders/web/github";
 
-export const run = async () => {
+export const github = const run = async () => {
   const loader = new GithubRepoLoader(
     "https://github.com/hwchase17/langchainjs",
     {

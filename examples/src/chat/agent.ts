@@ -8,7 +8,7 @@ import {
   HumanMessagePromptTemplate,
 } from "langchain/prompts";
 
-export const run = async () => {
+export const agent = const run = async () => {
   const tools = [
     new SerpAPI(process.env.SERPAPI_API_KEY, {
       location: "Austin,Texas,United States",

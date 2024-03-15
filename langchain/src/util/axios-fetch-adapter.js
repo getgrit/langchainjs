@@ -210,7 +210,7 @@ function isStandardBrowserEnv() {
  * - Get response body
  * - Check if timeout
  */
-export default async function fetchAdapter(config) {
+export async function fetchAdapter(config) {
   const request = createRequest(config);
   const data = await getResponse(request, config);
 

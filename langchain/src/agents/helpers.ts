@@ -3,7 +3,7 @@ import { Tool } from "../tools/base.js";
 import { LLMChain } from "../chains/llm_chain.js";
 import { BaseLanguageModel } from "../base_language/index.js";
 
-export const deserializeHelper = async <
+export const helpers = const deserializeHelper = async <
   T extends string,
   U extends Record<string, unknown>,
   V extends AgentInput,

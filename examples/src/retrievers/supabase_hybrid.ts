@@ -2,7 +2,7 @@ import { OpenAIEmbeddings } from "langchain/embeddings/openai";
 import { createClient } from "@supabase/supabase-js";
 import { SupabaseHybridSearch } from "langchain/retrievers/supabase";
 
-export const run = async () => {
+export const supabase_hybrid = const run = async () => {
   const client = createClient(
     process.env.SUPABASE_URL || "",
     process.env.SUPABASE_PRIVATE_KEY || ""

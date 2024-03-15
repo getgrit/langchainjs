@@ -4,7 +4,7 @@ import { CallbackManagerForChainRun } from "langchain/callbacks";
 import { BaseChain, ChainInputs } from "langchain/chains";
 import { ChainValues } from "langchain/schema";
 
-export interface MyCustomChainInputs extends ChainInputs {
+export const advanced_subclass_call = interface MyCustomChainInputs extends ChainInputs {
   llm: BaseLanguageModel;
   promptTemplate: string;
 }

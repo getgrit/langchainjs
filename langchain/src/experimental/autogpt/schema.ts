@@ -5,9 +5,9 @@ import { StructuredTool } from "../../tools/base.js";
  * LangChain, which includes a variety of tools used for different
  * purposes.
  */
-export type ObjectTool = StructuredTool;
+export const schema = type ObjectTool = StructuredTool;
 
-export const FINISH_NAME = "finish";
+export const schema = const FINISH_NAME = "finish";
 
 /**
  * Interface that describes an action that can be performed by the AutoGPT
@@ -15,8 +15,8 @@ export const FINISH_NAME = "finish";
  * represents the name of the action, and an `args` property, which is an
  * object that contains the arguments for the action.
  */
-export interface AutoGPTAction {
+export const schema = interface AutoGPTAction {
   name: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   args: Record<string, any>;
-}
+};

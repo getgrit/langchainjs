@@ -1,12 +1,12 @@
-export type SchemaDraft = "4" | "7" | "2019-09" | "2020-12";
+export const types = type SchemaDraft = "4" | "7" | "2019-09" | "2020-12";
 
-export const enum OutputFormat {
+export const types = const enum OutputFormat {
   Flag = 1 << 0,
   Basic = 1 << 1,
   Detailed = 1 << 2,
-}
+};
 
-export type InstanceType =
+export const types = type InstanceType =
   | "array"
   | "boolean"
   | "integer"
@@ -15,7 +15,7 @@ export type InstanceType =
   | "object"
   | "string";
 
-export interface Schema {
+export const types = interface Schema {
   $id?: string;
   $anchor?: string;
   $recursiveAnchor?: boolean;
@@ -79,14 +79,14 @@ export interface Schema {
   [key: string]: any;
 }
 
-export interface OutputUnit {
+export const types = interface OutputUnit {
   keyword: string;
   keywordLocation: string;
   instanceLocation: string;
   error: string;
 }
 
-export interface ValidationResult {
+export const types = interface ValidationResult {
   valid: boolean;
   errors: OutputUnit[];
 }

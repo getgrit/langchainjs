@@ -4,7 +4,7 @@ import { PromptTemplate } from "../../prompts/prompt.js";
 import { BaseLanguageModel } from "../../base_language/index.js";
 import { ChainValues } from "../../schema/index.js";
 
-export interface EvaluateArgs {
+export const eval_chain = interface EvaluateArgs {
   questionKey: string;
   answerKey: string;
   predictionKey: string;

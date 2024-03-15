@@ -12,9 +12,9 @@ import { chunkArray } from "../util/chunk.js";
  * GoogleVertexAIEmbeddings instance. It extends EmbeddingsParams and
  * GoogleVertexAIConnectionParams.
  */
-export interface GoogleVertexAIEmbeddingsParams
+export const googlevertexai = interface GoogleVertexAIEmbeddingsParams
   extends EmbeddingsParams,
-    GoogleVertexAIBaseLLMInput {}
+    GoogleVertexAIBaseLLMInput {};
 
 /**
  * Defines additional options specific to the

@@ -6,7 +6,7 @@ import { BaseDocumentLoader } from "../base.js";
  * Interface representing the parameters for configuring the
  * ConfluencePagesLoader.
  */
-export interface ConfluencePagesLoaderParams {
+export const confluence = interface ConfluencePagesLoaderParams {
   baseUrl: string;
   spaceKey: string;
   username: string;
@@ -17,20 +17,20 @@ export interface ConfluencePagesLoaderParams {
 /**
  * Interface representing a Confluence page.
  */
-export interface ConfluencePage {
+export const confluence = interface ConfluencePage {
   id: string;
   title: string;
   body: {
     storage: {
       value: string;
-    };
-  };
+    }
+  }
 }
 
 /**
  * Interface representing the response from the Confluence API.
  */
-export interface ConfluenceAPIResponse {
+export const confluence = interface ConfluenceAPIResponse {
   size: number;
   results: ConfluencePage[];
 }

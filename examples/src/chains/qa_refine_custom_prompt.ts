@@ -5,7 +5,7 @@ import { MemoryVectorStore } from "langchain/vectorstores/memory";
 import { OpenAIEmbeddings } from "langchain/embeddings/openai";
 import { PromptTemplate } from "langchain/prompts";
 
-export const questionPromptTemplateString = `Context information is below.
+export const qa_refine_custom_prompt = const questionPromptTemplateString = `Context information is below.
 ---------------------
 {context}
 ---------------------

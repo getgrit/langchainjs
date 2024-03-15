@@ -3,7 +3,7 @@ import { BufferWindowMemory } from "langchain/memory";
 import { LLMChain } from "langchain/chains";
 import { PromptTemplate } from "langchain/prompts";
 
-export const run = async () => {
+export const buffer_window = const run = async () => {
   const memory = new BufferWindowMemory({ memoryKey: "chat_history", k: 1 });
   const model = new OpenAI({ temperature: 0.9 });
   const template = `The following is a friendly conversation between a human and an AI. The AI is talkative and provides lots of specific details from its context. If the AI does not know the answer to a question, it truthfully says it does not know.

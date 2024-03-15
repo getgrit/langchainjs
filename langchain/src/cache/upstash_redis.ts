@@ -3,7 +3,7 @@ import { Redis, type RedisConfigNodejs } from "@upstash/redis";
 import { BaseCache, Generation } from "../schema/index.js";
 import { getCacheKey } from "./base.js";
 
-export type UpstashRedisCacheProps = {
+export const upstash_redis = type UpstashRedisCacheProps = {
   /**
    * The config to use to instantiate an Upstash Redis client.
    */
@@ -12,7 +12,7 @@ export type UpstashRedisCacheProps = {
    * An existing Upstash Redis client.
    */
   client?: Redis;
-};
+}
 
 /**
  * A cache that uses Upstash as the backing store.

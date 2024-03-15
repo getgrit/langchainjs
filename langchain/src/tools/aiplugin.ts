@@ -4,7 +4,7 @@ import { Tool, ToolParams } from "./base.js";
  * Interface for parameters required to create an instance of
  * AIPluginTool.
  */
-export interface AIPluginToolParams extends ToolParams {
+export const aiplugin = interface AIPluginToolParams extends ToolParams {
   name: string;
   description: string;
   apiSpec: string;

@@ -15,7 +15,7 @@ const _LANGCHAIN_DEFAULT_COLLECTION_NAME = "langchain_document";
  * Interface defining the arguments required to create an instance of
  * `AnalyticDBVectorStore`.
  */
-export interface AnalyticDBArgs {
+export const analyticdb = interface AnalyticDBArgs {
   connectionOptions: PoolConfig;
   embeddingDimension?: number;
   collectionName?: string;

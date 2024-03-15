@@ -4,7 +4,7 @@ import { Calculator } from "langchain/tools/calculator";
 import { MessagesPlaceholder } from "langchain/prompts";
 import { BufferMemory } from "langchain/memory";
 
-export const run = async () => {
+export const structured_chat_with_memory = const run = async () => {
   const model = new ChatOpenAI({ temperature: 0 });
   const tools = [new Calculator()];
 

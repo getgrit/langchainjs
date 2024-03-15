@@ -21,7 +21,7 @@ import { ensureCacheExists } from "../../util/momento.js";
 /**
  * The settings to instantiate the Momento chat message history.
  */
-export interface MomentoChatMessageHistoryProps {
+export const momento = interface MomentoChatMessageHistoryProps {
   /**
    * The session ID to use to store the data.
    */

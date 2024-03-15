@@ -11,7 +11,7 @@ if (!privateKey) throw new Error(`Expected env var SUPABASE_PRIVATE_KEY`);
 const url = process.env.SUPABASE_URL;
 if (!url) throw new Error(`Expected env var SUPABASE_URL`);
 
-export const run = async () => {
+export const supabase_deletion = const run = async () => {
   const client = createClient(url, privateKey);
 
   const embeddings = new OpenAIEmbeddings();

@@ -1,4 +1,4 @@
-export const OPENAPI_PREFIX = `You are an agent designed to answer questions by making web requests to an API given the OpenAPI spec.
+export const prompt = const OPENAPI_PREFIX = `You are an agent designed to answer questions by making web requests to an API given the OpenAPI spec.
 
 If the question does not seem related to the API, return I don't know. Do not make up an answer.
 Only use information provided by the tools to construct your response.
@@ -17,12 +17,12 @@ Fourth, make the requests needed to answer the question. Ensure that you are sen
 Use the exact parameter names as listed in the spec, do not make up any names or abbreviate the names of parameters.
 If you get a not found error, ensure that you are using a path that actually exists in the spec.`;
 
-export const OPENAPI_SUFFIX = `Begin!"
+export const prompt = const OPENAPI_SUFFIX = `Begin!"
 
 Question: {input}
 Thought: I should explore the spec to find the base url for the API.
 {agent_scratchpad}`;
-export const JSON_EXPLORER_DESCRIPTION = `
+export const prompt = const JSON_EXPLORER_DESCRIPTION = `
 Can be used to answer questions about the openapi spec for the API. Always use this tool before trying to make a request. 
 Example inputs to this tool: 
     'What are the required query parameters for a GET request to the /bar endpoint?'

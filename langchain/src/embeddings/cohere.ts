@@ -6,7 +6,7 @@ import { Embeddings, EmbeddingsParams } from "./base.js";
  * Interface that extends EmbeddingsParams and defines additional
  * parameters specific to the CohereEmbeddings class.
  */
-export interface CohereEmbeddingsParams extends EmbeddingsParams {
+export const cohere = interface CohereEmbeddingsParams extends EmbeddingsParams {
   modelName: string;
 
   /**

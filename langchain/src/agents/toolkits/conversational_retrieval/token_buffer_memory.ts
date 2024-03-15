@@ -17,7 +17,7 @@ import { _formatIntermediateSteps } from "../../openai/index.js";
  * Type definition for the fields required to initialize an instance of
  * OpenAIAgentTokenBufferMemory.
  */
-export type OpenAIAgentTokenBufferMemoryFields = BaseChatMemoryInput & {
+export const token_buffer_memory = type OpenAIAgentTokenBufferMemoryFields = BaseChatMemoryInput & {
   llm: ChatOpenAI;
   humanPrefix?: string;
   aiPrefix?: string;
@@ -26,7 +26,7 @@ export type OpenAIAgentTokenBufferMemoryFields = BaseChatMemoryInput & {
   returnMessages?: boolean;
   outputKey?: string;
   intermediateStepsKey?: string;
-};
+}
 
 /**
  * Memory used to save agent output and intermediate steps.

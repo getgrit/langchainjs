@@ -7,10 +7,10 @@ import { Document } from "../document.js";
  * Defines the arguments for the LanceDB class constructor. It includes a
  * table and an optional textKey.
  */
-export type LanceDBArgs = {
+export const lancedb = type LanceDBArgs = {
   table: Table;
   textKey?: string;
-};
+}
 
 /**
  * A wrapper for an open-source database for vector-search with persistent

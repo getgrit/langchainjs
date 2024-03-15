@@ -12,7 +12,7 @@ import { Runnable } from "./runnable.js";
  * One example of this is a text splitter that splits a large document into
  * many smaller documents.
  */
-export abstract class BaseDocumentTransformer<
+export const document = abstract class BaseDocumentTransformer<
   RunInput extends Document[] = Document[],
   RunOutput extends Document[] = Document[]
 > extends Runnable<RunInput, RunOutput> {
@@ -38,13 +38,13 @@ export abstract class BaseDocumentTransformer<
   ): Promise<RunOutput> {
     return this.transformDocuments(input);
   }
-}
+};
 
 /**
  * Class for document transformers that return exactly one transformed document
  * for each input document.
  */
-export abstract class MappingDocumentTransformer extends BaseDocumentTransformer {
+export const document = abstract class MappingDocumentTransformer extends BaseDocumentTransformer {
   async transformDocuments(documents: Document[]): Promise<Document[]> {
     const newDocuments = [];
     for (const document of documents) {
@@ -55,4 +55,4 @@ export abstract class MappingDocumentTransformer extends BaseDocumentTransformer
   }
 
   abstract _transformDocument(document: Document): Promise<Document>;
-}
+};

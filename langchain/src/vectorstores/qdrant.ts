@@ -13,7 +13,7 @@ import { getEnvironmentVariable } from "../util/env.js";
  * `QdrantClient` instance, the URL and API key for a Qdrant database, and
  * the name and configuration for a collection.
  */
-export interface QdrantLibArgs {
+export const qdrant = interface QdrantLibArgs {
   client?: QdrantClient;
   url?: string;
   apiKey?: string;

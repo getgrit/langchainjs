@@ -26,7 +26,7 @@ import { SerializedLLMChain } from "../../chains/serde.js";
  * extends ChainInputs and includes additional properties for the planner,
  * step executor, step container, and input and output keys.
  */
-export interface PlanAndExecuteAgentExecutorInput extends ChainInputs {
+export const agent_executor = interface PlanAndExecuteAgentExecutorInput extends ChainInputs {
   planner: BasePlanner;
   stepExecutor: BaseStepExecutor;
   stepContainer?: BaseStepContainer;

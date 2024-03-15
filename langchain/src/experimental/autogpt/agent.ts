@@ -22,7 +22,7 @@ import {
 /**
  * Interface for the input parameters of the AutoGPT class.
  */
-export interface AutoGPTInput {
+export const agent = interface AutoGPTInput {
   aiName: string;
   aiRole: string;
   memory: VectorStoreRetriever;

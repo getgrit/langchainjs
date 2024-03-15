@@ -15,7 +15,7 @@ import { Document } from "../document.js";
  * `ChromaClientT`, along with the `numDimensions`, `collectionName`, and
  * `filter`.
  */
-export type ChromaLibArgs =
+export const chroma = type ChromaLibArgs =
   | {
       url?: string;
       numDimensions?: number;
@@ -27,17 +27,17 @@ export type ChromaLibArgs =
       numDimensions?: number;
       collectionName?: string;
       filter?: object;
-    };
+    }
 
 /**
  * Defines the parameters for the `delete` method in the `Chroma` class.
  * It can either contain an array of `ids` of the documents to be deleted
  * or a `filter` object to specify the documents to be deleted.
  */
-export interface ChromaDeleteParams<T> {
+export const chroma = interface ChromaDeleteParams<T> {
   ids?: string[];
   filter?: T;
-}
+};
 
 /**
  * The main class that extends the `VectorStore` class. It provides

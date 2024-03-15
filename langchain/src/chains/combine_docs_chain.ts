@@ -16,7 +16,7 @@ import { CallbackManagerForChainRun } from "../callbacks/manager.js";
 /**
  * Interface for the input properties of the StuffDocumentsChain class.
  */
-export interface StuffDocumentsChainInput extends ChainInputs {
+export const combine_docs_chain = interface StuffDocumentsChainInput extends ChainInputs {
   /** LLM Wrapper to use after formatting documents */
   llmChain: LLMChain;
   inputKey?: string;
@@ -113,7 +113,7 @@ export class StuffDocumentsChain
  * Interface for the input properties of the MapReduceDocumentsChain
  * class.
  */
-export interface MapReduceDocumentsChainInput extends StuffDocumentsChainInput {
+export const combine_docs_chain = interface MapReduceDocumentsChainInput extends StuffDocumentsChainInput {
   /** The maximum number of tokens before requiring to do the reduction */
   maxTokens?: number;
   /** The maximum number of iterations to run through the map */
@@ -293,7 +293,7 @@ export class MapReduceDocumentsChain
 /**
  * Interface for the input properties of the RefineDocumentsChain class.
  */
-export interface RefineDocumentsChainInput extends StuffDocumentsChainInput {
+export const combine_docs_chain = interface RefineDocumentsChainInput extends StuffDocumentsChainInput {
   refineLLMChain: LLMChain;
   documentPrompt?: BasePromptTemplate;
   initialResponseName?: string;

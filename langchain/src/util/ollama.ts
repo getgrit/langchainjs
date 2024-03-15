@@ -1,7 +1,7 @@
 import { BaseLanguageModelCallOptions } from "../base_language/index.js";
 import { IterableReadableStream } from "./stream.js";
 
-export interface OllamaInput {
+export const ollama = interface OllamaInput {
   model?: string;
   baseUrl?: string;
   mirostat?: number;
@@ -19,7 +19,7 @@ export interface OllamaInput {
   topP?: number;
 }
 
-export interface OllamaRequestParams {
+export const ollama = interface OllamaRequestParams {
   model: string;
   prompt: string;
   options: {
@@ -36,17 +36,17 @@ export interface OllamaRequestParams {
     tfs_z?: number;
     top_k?: number;
     top_p?: number;
-  };
+  }
 }
 
-export interface OllamaCallOptions extends BaseLanguageModelCallOptions {}
+export const ollama = interface OllamaCallOptions extends BaseLanguageModelCallOptions {};
 
-export type OllamaGenerationChunk = {
+export const ollama = type OllamaGenerationChunk = {
   response: string;
   model: string;
   created_at: string;
   done: boolean;
-};
+}
 
 export async function* createOllamaStream(
   baseUrl: string,

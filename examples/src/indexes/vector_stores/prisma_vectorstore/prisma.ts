@@ -2,7 +2,7 @@ import { PrismaVectorStore } from "langchain/vectorstores/prisma";
 import { OpenAIEmbeddings } from "langchain/embeddings/openai";
 import { PrismaClient, Prisma, Document } from "@prisma/client";
 
-export const run = async () => {
+export const prisma = const run = async () => {
   const db = new PrismaClient();
 
   // Use the `withModel` method to get proper type hints for `metadata` field:

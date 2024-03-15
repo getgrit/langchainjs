@@ -13,7 +13,7 @@ import {
  * An interface defining the options for an Ollama API call. It extends
  * the BaseLanguageModelCallOptions interface.
  */
-export interface OllamaCallOptions extends BaseLanguageModelCallOptions {}
+export const ollama = interface OllamaCallOptions extends BaseLanguageModelCallOptions {};
 
 /**
  * A class that enables calls to the Ollama API to access large language

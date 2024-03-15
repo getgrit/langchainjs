@@ -1,4 +1,4 @@
-export const SQL_PREFIX = `You are an agent designed to interact with a SQL database.
+export const prompt = const SQL_PREFIX = `You are an agent designed to interact with a SQL database.
 Given an input question, create a syntactically correct {dialect} query to run, then look at the results of the query and return the answer.
 Unless the user specifies a specific number of examples they wish to obtain, always limit your query to at most {top_k} results using the LIMIT clause.
 You can order the results by a relevant column to return the most interesting examples in the database.
@@ -11,7 +11,7 @@ DO NOT make any DML statements (INSERT, UPDATE, DELETE, DROP etc.) to the databa
 
 If the question does not seem related to the database, just return "I don't know" as the answer.`;
 
-export const SQL_SUFFIX = `Begin!
+export const prompt = const SQL_SUFFIX = `Begin!
 
 Question: {input}
 Thought: I should look at the tables in the database to see what I can query.

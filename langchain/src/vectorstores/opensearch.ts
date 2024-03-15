@@ -25,7 +25,7 @@ interface VectorSearchOptions {
  * OpenSearchVectorStore class. It includes the OpenSearch client, index
  * name, and vector search options.
  */
-export interface OpenSearchClientArgs {
+export const opensearch = interface OpenSearchClientArgs {
   readonly client: Client;
   readonly indexName?: string;
 

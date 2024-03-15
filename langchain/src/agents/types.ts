@@ -8,7 +8,7 @@ import { BaseOutputParser } from "../schema/output_parser.js";
  * LLMChain instance, an optional output parser, and an optional list of
  * allowed tools.
  */
-export interface AgentInput {
+export const types = interface AgentInput {
   llmChain: LLMChain;
   outputParser: AgentActionOutputParser | undefined;
   allowedTools?: string[];
@@ -19,22 +19,22 @@ export interface AgentInput {
  * actions and finishes in LangChain. It extends the `BaseOutputParser`
  * class.
  */
-export abstract class AgentActionOutputParser extends BaseOutputParser<
+export const types = abstract class AgentActionOutputParser extends BaseOutputParser<
   AgentAction | AgentFinish
-> {}
+> {};
 
 /**
  * Type representing the stopping method for an agent. It can be either
  * 'force' or 'generate'.
  */
-export type StoppingMethod = "force" | "generate";
+export const types = type StoppingMethod = "force" | "generate";
 
 /**
  * Generic type representing a serialized agent in LangChain. It includes
  * the type of the agent, the serialized form of the LLMChain, and
  * additional properties specific to the agent type.
  */
-export type SerializedAgentT<
+export const types = type SerializedAgentT<
   TType extends string = string,
   FromLLMInput extends Record<string, unknown> = Record<string, unknown>,
   ConstructorInput extends AgentInput = AgentInput
@@ -44,27 +44,27 @@ export type SerializedAgentT<
 } & (
   | ({ load_from_llm_and_tools: true } & FromLLMInput)
   | ({ load_from_llm_and_tools?: false } & ConstructorInput)
-);
+);;
 
-export type SerializedFromLLMAndTools = {
+export const types = type SerializedFromLLMAndTools = {
   suffix?: string;
   prefix?: string;
   input_variables?: string[];
-};
+};;
 
 /**
  * Type representing a serialized ZeroShotAgent in LangChain. It extends
  * the `SerializedAgentT` type and includes additional properties specific
  * to the ZeroShotAgent.
  */
-export type SerializedZeroShotAgent = SerializedAgentT<
+export const types = type SerializedZeroShotAgent = SerializedAgentT<
   "zero-shot-react-description",
   SerializedFromLLMAndTools,
   AgentInput
->;
+>;;
 
 /**
  * Type representing a serialized agent in LangChain. It is currently
  * synonymous with `SerializedZeroShotAgent`.
  */
-export type SerializedAgent = SerializedZeroShotAgent;
+export const types = type SerializedAgent = SerializedZeroShotAgent;

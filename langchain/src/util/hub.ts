@@ -20,7 +20,7 @@ const HUB_PATH_REGEX = /lc(@[^:]+)?:\/\/(.*)/;
 
 const URL_PATH_SEPARATOR = "/";
 
-export const loadFromHub = async <T>(
+export const hub = const loadFromHub = async <T>(
   uri: string,
   loader: FileLoader<T>,
   validPrefix: string,

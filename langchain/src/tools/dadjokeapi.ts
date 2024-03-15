@@ -41,4 +41,4 @@ class DadJokeAPI extends Tool {
   }
 }
 
-export { DadJokeAPI };
+export const dadjokeapi = ;

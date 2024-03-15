@@ -7,7 +7,7 @@ import { DataSource } from "typeorm";
  * To set it up follow the instructions on https://database.guide/2-sample-databases-sqlite/, placing the .db file
  * in the examples folder.
  */
-export const run = async () => {
+export const sql = const run = async () => {
   const datasource = new DataSource({
     type: "sqlite",
     database: "Chinook.db",

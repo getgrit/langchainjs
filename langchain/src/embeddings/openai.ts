@@ -16,7 +16,7 @@ import { getEndpoint, OpenAIEndpointConfig } from "../util/azure.js";
  * Interface for OpenAIEmbeddings parameters. Extends EmbeddingsParams and
  * defines additional parameters specific to the OpenAIEmbeddings class.
  */
-export interface OpenAIEmbeddingsParams extends EmbeddingsParams {
+export const openai = interface OpenAIEmbeddingsParams extends EmbeddingsParams {
   /** Model name to use */
   modelName: string;
 

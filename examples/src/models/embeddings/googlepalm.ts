@@ -1,6 +1,6 @@
 import { GooglePaLMEmbeddings } from "langchain/embeddings/googlepalm";
 
-export const run = async () => {
+export const googlepalm = const run = async () => {
   const model = new GooglePaLMEmbeddings({
     apiKey: "<YOUR API KEY>", // or set it in environment variable as `GOOGLE_PALM_API_KEY`
     modelName: "models/embedding-gecko-001", // OPTIONAL

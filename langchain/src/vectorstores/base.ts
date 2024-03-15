@@ -16,26 +16,26 @@ type AddDocumentOptions = Record<string, any>;
 /**
  * Type for options when performing a maximal marginal relevance search.
  */
-export type MaxMarginalRelevanceSearchOptions<FilterType> = {
+export const base = type MaxMarginalRelevanceSearchOptions<FilterType> = {
   k: number;
   fetchK?: number;
   lambda?: number;
   filter?: FilterType;
-};
+}
 
 /**
  * Type for options when performing a maximal marginal relevance search
  * with the VectorStoreRetriever.
  */
-export type VectorStoreRetrieverMMRSearchKwargs = {
+export const base = type VectorStoreRetrieverMMRSearchKwargs = {
   fetchK?: number;
   lambda?: number;
-};
+}
 
 /**
  * Type for input when creating a VectorStoreRetriever instance.
  */
-export type VectorStoreRetrieverInput<V extends VectorStore> =
+export const base = type VectorStoreRetrieverInput<V extends VectorStore> =
   BaseRetrieverInput &
     (
       | {
@@ -134,7 +134,7 @@ export class VectorStoreRetriever<
  * adding vectors and documents, deleting from the store, and searching
  * the store.
  */
-export abstract class VectorStore extends Serializable {
+export const base = abstract class VectorStore extends Serializable {
   declare FilterType: object | string;
 
   lc_namespace = ["langchain", "vectorstores", this._vectorstoreType()];
@@ -281,13 +281,13 @@ export abstract class VectorStore extends Serializable {
       return new VectorStoreRetriever({ ...params });
     }
   }
-}
+};
 
 /**
  * Abstract class extending VectorStore with functionality for saving and
  * loading the vector store.
  */
-export abstract class SaveableVectorStore extends VectorStore {
+export const base = abstract class SaveableVectorStore extends VectorStore {
   abstract save(directory: string): Promise<void>;
 
   static load(
@@ -296,4 +296,4 @@ export abstract class SaveableVectorStore extends VectorStore {
   ): Promise<SaveableVectorStore> {
     throw new Error("Not implemented");
   }
-}
+};

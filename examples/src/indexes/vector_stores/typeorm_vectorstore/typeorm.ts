@@ -5,7 +5,7 @@ import { TypeORMVectorStore } from "langchain/vectorstores/typeorm";
 // First, follow set-up instructions at
 // https://js.langchain.com/docs/modules/indexes/vector_stores/integrations/typeorm
 
-export const run = async () => {
+export const typeorm = const run = async () => {
   const args = {
     postgresConnectionOptions: {
       type: "postgres",

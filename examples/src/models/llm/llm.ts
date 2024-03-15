@@ -1,6 +1,6 @@
 import { OpenAI } from "langchain/llms/openai";
 
-export const run = async () => {
+export const llm = const run = async () => {
   const modelA = new OpenAI();
   // `call` is a simple string-in, string-out method for interacting with the model.
   const resA = await modelA.call(

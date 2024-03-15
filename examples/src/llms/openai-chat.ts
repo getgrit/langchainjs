@@ -1,6 +1,6 @@
 import { OpenAIChat } from "langchain/llms/openai";
 
-export const run = async () => {
+export const openai_chat = const run = async () => {
   const model = new OpenAIChat({
     prefixMessages: [
       {

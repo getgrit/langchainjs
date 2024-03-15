@@ -3,7 +3,7 @@ import { LLMChain } from "langchain/chains";
 import { OpenAI } from "langchain/llms/openai";
 import { PromptTemplate } from "langchain/prompts";
 
-export const run = async () => {
+export const trace_groups = const run = async () => {
   // Initialize the LLMChain
   const llm = new OpenAI({ temperature: 0.9 });
   const prompt = new PromptTemplate({

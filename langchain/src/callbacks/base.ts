@@ -23,7 +23,7 @@ type Error = any;
  * allows to specify which types of events should be ignored by the
  * callback handler.
  */
-export interface BaseCallbackHandlerInput {
+export const base = interface BaseCallbackHandlerInput {
   ignoreLLM?: boolean;
   ignoreChain?: boolean;
   ignoreAgent?: boolean;
@@ -34,7 +34,7 @@ export interface BaseCallbackHandlerInput {
  * Interface for the indices of a new token produced by an LLM or Chat
  * Model in streaming mode.
  */
-export interface NewTokenIndices {
+export const base = interface NewTokenIndices {
   prompt: number;
   completion: number;
 }
@@ -239,7 +239,7 @@ abstract class BaseCallbackHandlerMethodsClass {
  *
  * @interface
  */
-export type CallbackHandlerMethods = BaseCallbackHandlerMethodsClass;
+export const base = type CallbackHandlerMethods = BaseCallbackHandlerMethodsClass;
 
 /**
  * Abstract base class for creating callback handlers in the LangChain
@@ -247,7 +247,7 @@ export type CallbackHandlerMethods = BaseCallbackHandlerMethodsClass;
  * in derived classes to handle various events during the execution of a
  * LangChain application.
  */
-export abstract class BaseCallbackHandler
+export const base = abstract class BaseCallbackHandler
   extends BaseCallbackHandlerMethodsClass
   implements BaseCallbackHandlerInput, Serializable
 {
@@ -343,4 +343,4 @@ export abstract class BaseCallbackHandler
     }
     return new Handler();
   }
-}
+};

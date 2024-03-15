@@ -2,14 +2,14 @@ import { BaseCallbackConfig, CallbackManager } from "../callbacks/manager.js";
 import { Serializable } from "../load/serializable.js";
 import { IterableReadableStream } from "../util/stream.js";
 
-export type RunnableConfig = BaseCallbackConfig;
+export const runnable = type RunnableConfig = BaseCallbackConfig;
 
-export type RunnableFunc<RunInput, RunOutput> = (
+export const runnable = type RunnableFunc<RunInput, RunOutput> = (
   input: RunInput
 ) => RunOutput | Promise<RunOutput>;
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export type RunnableLike<RunInput = any, RunOutput = any> =
+export const runnable = type RunnableLike<RunInput = any, RunOutput = any> =
   | Runnable<RunInput, RunOutput>
   | RunnableFunc<RunInput, RunOutput>
   | { [key: string]: RunnableLike<RunInput, RunOutput> };
@@ -25,7 +25,7 @@ function _coerceToDict(value: any, defaultKey: string) {
  * A Runnable is a generic unit of work that can be invoked, batched, streamed, and/or
  * transformed.
  */
-export abstract class Runnable<
+export const runnable = abstract class Runnable<
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   RunInput = any,
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -37,7 +37,7 @@ export abstract class Runnable<
   abstract invoke(
     input: RunInput,
     options?: Partial<CallOptions>
-  ): Promise<RunOutput>;
+  ): Promise<RunOutput>
 
   /**
    * Bind arguments to a Runnable, returning a new Runnable.
@@ -268,7 +268,7 @@ export abstract class Runnable<
   static isRunnable(thing: any): thing is Runnable {
     return thing.lc_runnable;
   }
-}
+};
 
 /**
  * A sequence of runnables, where the output of each is the input of the next.
@@ -704,11 +704,11 @@ export class RunnableBinding<
   }
 }
 
-export type RouterInput = {
+export const runnable = type RouterInput = {
   key: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   input: any;
-};
+};;
 
 /**
  * A runnable that routes to a set of runnables based on Input['key'].

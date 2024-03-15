@@ -6,7 +6,7 @@ import { RecursiveCharacterTextSplitter } from "langchain/text_splitter";
 import { BufferMemory } from "langchain/memory";
 import * as fs from "fs";
 
-export const run = async () => {
+export const conversational_qa = const run = async () => {
   /* Initialize the LLM to use to answer the question */
   const model = new ChatOpenAI({});
   /* Load in the file we want to do question answering over */

@@ -8,7 +8,7 @@ import {
 } from "langchain/prompts";
 import { BufferMemory } from "langchain/memory";
 
-export const run = async () => {
+export const memory = const run = async () => {
   const chat = new ChatOpenAI({ temperature: 0 });
 
   const chatPrompt = ChatPromptTemplate.fromPromptMessages([

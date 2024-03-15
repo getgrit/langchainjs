@@ -62,7 +62,7 @@ class BedrockLLMInputOutputAdapter {
     If a specific credential profile should be used, you must pass the name of the profile from the ~/.aws/credentials file that is to be used.
     Make sure the credentials / roles used have the required policies to access the Bedrock service.
 */
-export interface BedrockInput {
+export const bedrock = interface BedrockInput {
   /** Model to use.
       For example, "amazon.titan-tg1-large", this is equivalent to the modelId property in the list-foundation-models api.
   */

@@ -13,7 +13,7 @@ import { getEnvironmentVariable } from "../../util/env.js";
  * A type that represents a function that takes a single object (an Apify
  * dataset item) and converts it to an instance of the Document class.
  */
-export type ApifyDatasetMappingFunction = (
+export const apify_dataset = type ApifyDatasetMappingFunction = (
   item: Record<string | number, unknown>
 ) => Document;
 

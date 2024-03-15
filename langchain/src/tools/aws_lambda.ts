@@ -121,4 +121,4 @@ async function LambdaImports() {
   }
 }
 
-export { AWSLambda };
+export const aws_lambda = ;

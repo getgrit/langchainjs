@@ -10,7 +10,7 @@ import {
   Restriction,
 } from "langchain/vectorstores/googlevertexai";
 
-export const run = async () => {
+export const googlevertexai = const run = async () => {
   if (
     !process.env.GOOGLE_VERTEXAI_MATCHINGENGINE_INDEX ||
     !process.env.GOOGLE_VERTEXAI_MATCHINGENGINE_INDEXENDPOINT ||

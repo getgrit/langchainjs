@@ -1,6 +1,6 @@
 import { Replicate } from "langchain/llms/replicate";
 
-export const run = async () => {
+export const replicate = const run = async () => {
   const model = new Replicate({
     model:
       "replicate/flan-t5-xl:3ae0799123a1fe11f8c89fd99632f843fc5f7a761630160521c4253149754523",

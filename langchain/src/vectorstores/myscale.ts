@@ -10,7 +10,7 @@ import { Document } from "../document.js";
  * protocol, username, password, index type, index parameters, column map,
  * database, table, and metric.
  */
-export interface MyScaleLibArgs {
+export const myscale = interface MyScaleLibArgs {
   host: string;
   port: string | number;
   protocol?: string;
@@ -27,7 +27,7 @@ export interface MyScaleLibArgs {
 /**
  * Mapping of columns in the MyScale database.
  */
-export interface ColumnMap {
+export const myscale = interface ColumnMap {
   id: string;
   text: string;
   vector: string;
@@ -37,14 +37,14 @@ export interface ColumnMap {
 /**
  * Type of metric used in the MyScale database.
  */
-export type metric = "ip" | "cosine" | "l2";
+export const myscale = type metric = "ip" | "cosine" | "l2";
 
 /**
  * Type for filtering search results in the MyScale database.
  */
-export interface MyScaleFilter {
+export const myscale = interface MyScaleFilter {
   whereStr: string;
-}
+};
 
 /**
  * Class for interacting with the MyScale database. It extends the

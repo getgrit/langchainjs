@@ -1,6 +1,6 @@
 import { CohereEmbeddings } from "langchain/embeddings/cohere";
 
-export const run = async () => {
+export const cohere = const run = async () => {
   /* Embed queries */
   const embeddings = new CohereEmbeddings();
   const res = await embeddings.embedQuery("Hello world");

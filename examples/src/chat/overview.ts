@@ -11,7 +11,7 @@ import {
 import { HumanMessage, SystemMessage } from "langchain/schema";
 import { SerpAPI } from "langchain/tools";
 
-export const run = async () => {
+export const overview = const run = async () => {
   const chat = new ChatOpenAI({ temperature: 0 });
 
   // Sending one message to the chat model, receiving one message back
